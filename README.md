@@ -1,1 +1,1 @@
-# Greeley-City-Council-accountability-and-transparency-tracker
+# Greeley-City-Council-Accountability-And-Transparency-Tracker
