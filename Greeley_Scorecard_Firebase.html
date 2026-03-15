@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greeley Council Transparency & Accountability Scorecard</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{font-family:'Libre Franklin',sans-serif;font-size:14px;background:#f0ebe0;color:#1c1c1c}
+body{min-height:100vh;background:#f0ebe0}
+
+/* MASTHEAD */
+.masthead{background:#1c1c1c;border-bottom:4px solid #c0392b}
+.masthead-inner{max-width:1140px;margin:0 auto;padding:20px 24px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.mast-kicker{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#c0392b;margin-bottom:5px}
+.mast-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.8vw,34px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-0.5px}
+.mast-title em{color:#c0392b;font-style:normal}
+.mast-sub{font-size:9px;font-weight:300;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px}
+.mast-right{text-align:right;flex-shrink:0}
+.mast-date{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.32);margin-bottom:4px}
+.mast-tagline{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#c0392b}
+
+/* EXPLAIN BAR */
+.explain-bar{background:#e8e2d6;border-bottom:1px solid #d0c8bb;padding:8px 24px}
+.explain-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.explain-text{font-size:11px;color:#555;flex:1;min-width:200px;line-height:1.5}
+.explain-text strong{color:#1c1c1c;font-weight:700}
+.legend{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0;align-items:center}
+.legend-label{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999}
+.leg{display:flex;align-items:center;gap:4px;font-size:9px;font-weight:600;color:#555;white-space:nowrap}
+.pip{width:13px;height:13px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}
+.pip.committed{background:#1e8449;color:#fff}
+.pip.met      {background:#0a5c8a;color:#fff}
+.pip.refused  {background:#c0392b;color:#fff}
+.pip.failed   {background:#6b0000;color:#fff}
+.pip.noresp   {background:#e8a020;color:#fff}
+.pip.blank    {background:#bbb;color:#666}
+
+/* ADMIN BAR */
+.admin-bar{background:#1c1c1c;padding:6px 24px}
+.admin-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:10px}
+.admin-notice{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#1e8449;background:rgba(30,132,73,0.15);padding:3px 9px;border:1px solid rgba(30,132,73,0.3)}
+.btn{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 13px;cursor:pointer;border:none;transition:background 0.15s}
+.btn-admin{background:#c0392b;color:#fff}
+.btn-admin:hover{background:#922b21}
+.btn-logout{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15)}
+.btn-logout:hover{background:rgba(255,255,255,0.14)}
+
+/* FIREBASE STATUS */
+.fb-status{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+.fb-status.connecting{color:#b7800a;background:rgba(184,128,10,0.12);border:1px solid rgba(184,128,10,0.3)}
+.fb-status.live{color:#1e8449;background:rgba(30,132,73,0.12);border:1px solid rgba(30,132,73,0.3)}
+.fb-status.error{color:#c0392b;background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.3)}
+
+/* LOGIN */
+.login-panel{background:#f0ebe0;border-bottom:3px solid #c0392b;padding:18px 24px;display:none}
+.login-box{max-width:310px;margin:0 auto;background:#fff;border:1px solid #d0c8bb;padding:18px}
+.login-box h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:4px}
+.login-box p{font-size:11px;color:#777;margin-bottom:12px}
+.login-box input{width:100%;border:1px solid #d0c8bb;padding:7px 9px;font-size:12px;font-family:'Libre Franklin',sans-serif;margin-bottom:9px;background:#f7f5f0;color:#1c1c1c}
+.login-box input:focus{outline:none;border-color:#c0392b}
+.err-msg{font-size:11px;color:#c0392b;margin-top:4px}
+
+/* MAIN */
+.main{max-width:1140px;margin:0 auto;padding:16px 24px 0}
+
+/* DEMAND BLOCKS */
+.demand-block{background:#fff;border:1px solid #d0c8bb;margin-bottom:12px;overflow:hidden}
+.demand-hdr{display:flex;align-items:stretch;background:#1c1c1c}
+.d-num{background:#c0392b;color:#fff;font-family:'Playfair Display',serif;font-size:17px;font-weight:900;min-width:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.d-num.oversight{background:#0a5c8a}
+.d-text{padding:6px 12px;flex:1}
+.d-title{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#fff;line-height:1.1}
+.d-desc{font-size:8.5px;font-weight:300;color:rgba(255,255,255,0.4);margin-top:2px}
+.d-std{font-size:8.5px;font-weight:600;color:#e8a020;margin-top:2px}
+
+/* SCORE TABLE */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:11px}
+table.demand-tbl{min-width:820px}
+th{padding:5px 5px;font-size:8px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#888;border-bottom:1.5px solid #1c1c1c;background:#f7f3ee;white-space:nowrap;text-align:center}
+th.crit-th{text-align:left;min-width:128px;background:#eee8de}
+td{padding:4px 5px;border-bottom:1px solid #e8e2d6;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+.crit-td{font-size:10px;color:#555;background:#faf8f5}
+.off-th{font-size:8.5px;line-height:1.2;font-weight:700;color:#1c1c1c;text-transform:none;letter-spacing:0}
+.off-th .role{font-size:7px;font-weight:400;color:#999;display:block;text-transform:uppercase;letter-spacing:0.6px;margin-top:1px}
+.sc-td{text-align:center;padding:3px 4px}
+.spip{width:24px;height:24px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;cursor:default;transition:transform 0.1s;line-height:1}
+.spip.clickable{cursor:pointer;box-shadow:0 0 0 1px rgba(0,0,0,0.1)}
+.spip.clickable:hover{transform:scale(1.15)}
+.spip.committed{background:#d5f0e2;color:#1e8449;border:1.5px solid #1e8449}
+.spip.met      {background:#d0eaf8;color:#0a5c8a;border:1.5px solid #0a5c8a}
+.spip.refused  {background:#fde8e8;color:#c0392b;border:1.5px solid #c0392b}
+.spip.failed   {background:#f5d0d0;color:#6b0000;border:1.5px solid #6b0000}
+.spip.noresp   {background:#fef3d0;color:#b7800a;border:1.5px solid #e8a020}
+.spip.blank    {background:#f0ebe0;color:#bbb;border:1.5px dashed #ccc}
+
+/* TOTAL ROW */
+.total-row td{background:#1c1c1c;border-bottom:none;padding:4px 5px}
+.total-label{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)}
+.total-badge{display:inline-block;font-family:'Playfair Display',serif;font-size:9.5px;font-weight:900;padding:2px 5px}
+.total-badge.high{background:#d5f0e2;color:#1e8449}
+.total-badge.mid {background:#fef3d0;color:#b7800a}
+.total-badge.low {background:#fde8e8;color:#c0392b}
+.total-badge.none{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.28)}
+
+/* OVERALL GRADE SECTION */
+.overall-section{background:#fff;border:1px solid #d0c8bb;margin-bottom:14px;overflow:hidden}
+.overall-hdr{background:#1c1c1c;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c0392b}
+.overall-hdr-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff}
+.overall-hdr-sub{font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase}
+.overall-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:none}
+.oc{border-right:1px solid #e8e2d6;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:5px}
+.oc:last-child{border-right:none}
+.oc-name{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;color:#1c1c1c;text-align:center;line-height:1.2}
+.oc-role{font-size:7.5px;font-weight:400;color:#999;text-transform:uppercase;letter-spacing:0.5px;text-align:center}
+.oc-grade{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;line-height:1;margin:2px 0}
+.oc-grade.A{color:#1e8449}.oc-grade.B{color:#0a5c8a}.oc-grade.C{color:#b7800a}.oc-grade.D{color:#c0392b}.oc-grade.F{color:#922b21}.oc-grade.X{color:#bbb}
+.oc-pct{font-size:10px;font-weight:700;text-align:center}
+.oc-pct.A{color:#1e8449}.oc-pct.B{color:#0a5c8a}.oc-pct.C{color:#b7800a}.oc-pct.D,.oc-pct.F{color:#c0392b}.oc-pct.X{color:#bbb}
+.oc-bar-bg{width:100%;height:4px;background:#e8e2d6;border-radius:2px;overflow:hidden}
+.oc-bar-fill{height:100%;border-radius:2px;transition:width 0.4s}
+.oc-bar-fill.A,.oc-bar-fill.B{background:#1e8449}.oc-bar-fill.C{background:#e8a020}.oc-bar-fill.D,.oc-bar-fill.F{background:#c0392b}.oc-bar-fill.X{background:#ddd}
+.oc-sub{font-size:7.5px;color:#aaa;text-align:center;margin-top:-3px;margin-bottom:1px}
+.oc-dl{font-size:7px;font-weight:700;min-width:18px;text-align:right;flex-shrink:0}
+.oc-dl-good{color:#1e8449}.oc-dl-mid{color:#b7800a}.oc-dl-bad{color:#c0392b}.oc-dl-blank{color:#ccc}
+.oc-demand-row{display:flex;align-items:center;gap:4px;width:100%}
+.oc-demand-label{font-size:7px;font-weight:600;color:#bbb;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0;width:20px}
+.oc-dots{display:flex;gap:2px}
+.mini-dot{width:6px;height:6px;border-radius:1px;flex-shrink:0}
+.mini-dot.committed{background:#1e8449}.mini-dot.met{background:#0a5c8a}.mini-dot.refused{background:#c0392b}
+.mini-dot.failed{background:#6b0000}.mini-dot.noresp{background:#e8a020}.mini-dot.blank{background:#ddd}
+
+/* JOIN BOX */
+.join-box{background:#fff;border:2px solid #c0392b;margin-bottom:18px;overflow:hidden}
+.join-inner{display:grid;grid-template-columns:200px 1fr;gap:0}
+.join-hdr-col{background:#c0392b;padding:14px 16px;display:flex;flex-direction:column;justify-content:center}
+.join-eyebrow{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px}
+.join-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#fff;line-height:1}
+.join-title em{font-style:italic}
+.join-tagline{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.65);margin-top:8px}
+.join-content{padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.join-pitch{font-size:11px;color:#444;line-height:1.55}
+.join-pitch strong{color:#1c1c1c;font-weight:700}
+.join-steps{display:flex;flex-direction:column;gap:6px}
+.join-step{display:flex;align-items:flex-start;gap:8px}
+.step-n{background:#1c1c1c;color:#fff;font-family:'Playfair Display',serif;font-size:9px;font-weight:900;width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-t{font-size:10px;color:#333;line-height:1.45}
+.step-t strong{font-weight:700;color:#1c1c1c}
+.ptag{display:inline-block;padding:0 4px;font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-right:3px}
+.ptag.red{background:#c0392b}.ptag.gold{background:#e8a020;color:#1c1c1c}.ptag.blue{background:#1877F2}
+@media(max-width:700px){
+  .join-inner{grid-template-columns:1fr}
+  .join-content{grid-template-columns:1fr}
+  .overall-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* FOOTER */
+.footer{background:#1c1c1c;border-top:3px solid #c0392b;padding:9px 24px}
+.footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.footer-left{font-size:8.5px;font-weight:300;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.28)}
+.footer-center{font-family:'Playfair Display',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.4)}
+.footer-right{font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c0392b}
+.last-upd{font-size:8.5px;color:rgba(255,255,255,0.2);margin-top:2px}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;z-index:9999}
+.modal{background:#fff;border:2px solid #1c1c1c;min-width:290px;max-width:370px;overflow:hidden}
+.modal-hdr{background:#1c1c1c;padding:10px 14px}
+.modal-hdr h3{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#fff}
+.modal-hdr p{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px}
+.modal-body{padding:12px 14px}
+.modal-sec{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #e8e2d6}
+.modal-sec.pos{color:#1e8449}.modal-sec.neg{color:#c0392b}.modal-sec.neu{color:#b7800a}
+.modal-opts{display:flex;flex-direction:column;gap:5px;margin-bottom:8px}
+.modal-opt{display:flex;align-items:center;gap:9px;padding:7px 10px;border:1px solid #e0d8cc;cursor:pointer;transition:background 0.1s}
+.modal-opt:hover{background:#f7f3ee}
+.modal-opt.selected{border-color:#c0392b;background:#fff8f7}
+.opt-icon{width:19px;height:19px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0}
+.opt-icon.committed{background:#d5f0e2;color:#1e8449;border:1px solid #1e8449}
+.opt-icon.met      {background:#d0eaf8;color:#0a5c8a;border:1px solid #0a5c8a}
+.opt-icon.refused  {background:#fde8e8;color:#c0392b;border:1px solid #c0392b}
+.opt-icon.failed   {background:#f5d0d0;color:#6b0000;border:1px solid #6b0000}
+.opt-icon.noresp   {background:#fef3d0;color:#b7800a;border:1px solid #e8a020}
+.opt-icon.blank    {background:#f0ebe0;color:#bbb;border:1px dashed #ccc}
+.opt-short{font-size:10px;font-weight:700;color:#1c1c1c}
+.opt-long {font-size:8.5px;color:#888}
+.modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;padding-top:9px;border-top:1px solid #e8e2d6}
+
+/* OVERSIGHT MEMBER PANEL */
+.oversight-panel{background:#1c1c1c;border-bottom:3px solid #0a5c8a;padding:10px 24px;display:none}
+.oversight-inner{max-width:1140px;margin:0 auto}
+.oversight-title{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:8px}
+.oversight-title span{color:#0a5c8a;font-style:italic}
+.oversight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.oversight-field{display:flex;flex-direction:column;gap:3px}
+.oversight-label{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.oversight-input{font-family:'Libre Franklin',sans-serif;font-size:11px;padding:6px 9px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:#fff;width:100%}
+.oversight-input:focus{outline:none;border-color:#0a5c8a;background:rgba(10,92,138,0.15)}
+.oversight-input::placeholder{color:rgba(255,255,255,0.22)}
+.oversight-save{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;cursor:pointer;border:none;background:#0a5c8a;color:#fff;margin-top:10px;transition:background 0.15s}
+.oversight-save:hover{background:#084a72}
+.oversight-saved{font-size:10px;color:#1e8449;font-style:italic;margin-left:10px;display:none}
+.oversight-members-col{background:#f0ebe0;font-size:9px;color:#555;line-height:1.55;padding:5px 8px}
+.oversight-member-name{font-weight:700;color:#0a5c8a}
+.btn-cancel{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:1px solid #ccc;background:transparent;color:#777;cursor:pointer}
+.btn-cancel:hover{background:#f7f3ee}
+.btn-save{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:none;background:#c0392b;color:#fff;cursor:pointer}
+.btn-save:hover{background:#922b21}
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-inner">
+    <div>
+      <div class="mast-kicker">Greeley Accountability Coalition · Cascadia Data Center Project · 2026</div>
+      <div class="mast-title">Council <em>Transparency &amp; Accountability</em> Scorecard</div>
+      <div class="mast-sub">Tracking commitments · Issue by Issue · Official by Official</div>
+    </div>
+    <div class="mast-right">
+      <div class="mast-date" id="lastUpdatedMast">Live tracking · 2026</div>
+      <div class="mast-tagline">No Taxation Without Representation</div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPLAIN BAR -->
+<div class="explain-bar">
+  <div class="explain-inner">
+    <div class="explain-text">Tracks whether each Greeley City Council member has made a <strong>public, on-record commitment</strong> to our six demands regarding the Cascadia Data Center — and whether they followed through. <strong>Silence is a score. Broken promises are a score.</strong></div>
+    <div class="legend">
+      <span class="legend-label">Key:</span>
+      <div class="leg"><div class="pip committed">✓</div> Committed</div>
+      <div class="leg"><div class="pip met">★</div> Met Commitment</div>
+      <div class="leg"><div class="pip refused">✗</div> Refused</div>
+      <div class="leg"><div class="pip failed">✗</div> Failed Constituency</div>
+      <div class="leg"><div class="pip noresp">?</div> No Response</div>
+      <div class="leg"><div class="pip blank">—</div> Not tracked</div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN BAR -->
+<div class="admin-bar">
+  <div class="admin-bar-inner">
+    <span id="fbStatus" class="fb-status connecting">⟳ Connecting…</span>
+    <span id="adminNotice" style="display:none" class="admin-notice">● Admin mode active</span>
+    <button class="btn btn-logout" id="logoutBtn" style="display:none" onclick="doLogout()">Lock scorecard</button>
+    <button class="btn btn-admin" id="adminBtn" onclick="toggleLogin()">Admin login</button>
+  </div>
+</div>
+
+<!-- LOGIN -->
+<div class="login-panel" id="loginPanel">
+  <div class="login-box">
+    <h3>Admin Access</h3>
+    <p>Enter your password to update scores</p>
+    <input type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()"/>
+    <button class="btn btn-admin" style="width:100%;padding:8px" onclick="doLogin()">Unlock Scorecard</button>
+    <div class="err-msg" id="loginErr"></div>
+  </div>
+</div>
+
+<!-- OVERSIGHT MEMBERS PANEL (admin only) -->
+<div class="oversight-panel" id="oversightPanel">
+  <div class="oversight-inner">
+    <div class="oversight-title">Citizens Oversight Council — <span>DSA-Appointed Members</span></div>
+    <div class="oversight-grid" id="oversightGrid"></div>
+    <div style="display:flex;align-items:center;margin-top:10px">
+      <button class="oversight-save" onclick="saveOversightMembers()">Save Members</button>
+      <span class="oversight-saved" id="oversightSaved">Saved ✓</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main" id="mainContent"></div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-left">Greeley Accountability Coalition · Council Transparency &amp; Accountability Scorecard · Cascadia Data Center · 2026</div>
+      <div class="last-upd" id="lastUpdFooter"></div>
+    </div>
+    <div class="footer-center">★ Updated in real time ★</div>
+    <div class="footer-right">No Kings. Just Citizens.</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modalBox"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     FIREBASE SDK  (loaded from Google's CDN — no npm needed)
+═══════════════════════════════════════════════════════════════ -->
+<script type="module">
+import { initializeApp }           from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, set, get, onValue, update }
+                                   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+/* ═══════════════════════════════════════════════════════════════
+   ▼▼▼  PASTE YOUR FIREBASE CONFIG HERE  ▼▼▼
+   (You will get these values from the Firebase console —
+    step-by-step instructions are below the file)
+═══════════════════════════════════════════════════════════════ */
+const firebaseConfig = {
+    apiKey: "AIzaSyBHhs6qQMYH-vvXDCd9vu9-x1IaBWxqXV0",
+    authDomain: "grelley-council-scorecard.firebaseapp.com",
+    databaseURL: "https://grelley-council-scorecard-default-rtdb.firebaseio.com",
+    projectId: "grelley-council-scorecard",
+    storageBucket: "grelley-council-scorecard.firebasestorage.app",
+    messagingSenderId: "407414611999",
+    appId: "1:407414611999:web:59017d4ab0263d9b6b752a",
+    measurementId: "G-RTHG64ZQB2"
+  };
+/* ▲▲▲  END OF CONFIG SECTION  ▲▲▲ */
+
+const app = initializeApp(firebaseConfig);
+const db  = getDatabase(app);
+
+/* ── ADMIN PASSWORDS ────────────────────────────────────────────
+   To add/remove admins: edit this list, save, re-upload.
+─────────────────────────────────────────────────────────────── */
+const ADMINS = [
+  { name: "Eric",    pw: "greeley2025" },
+  { name: "Admin 2", pw: "changeme2"  },
+  { name: "Admin 3", pw: "changeme3"  },
+];
+
+let currentAdmin = null;
+let isAdmin      = false;
+let scores       = {};
+let modalCtx     = null, modalSel = null;
+
+const OFFICIALS = [
+  {id:"mayor", name:"Dale Hall",        role:"Mayor"},
+  {id:"mpt",   name:"Melissa McDonald", role:"Mayor Pro Tem · At-Large"},
+  {id:"w1",    name:"Tommy Butler",     role:"Ward I"},
+  {id:"w2",    name:"Deb DeBoutez",     role:"Ward II"},
+  {id:"w3",    name:"Johnny Olson",     role:"Ward III"},
+  {id:"w4",    name:"Brian Rudy",       role:"Ward IV"},
+  {id:"al",    name:"Ryan Roth",        role:"At-Large"},
+];
+
+const DEMANDS = [
+  {id:"accept", num:1, title:"Council Commitment to Accept DSA-Appointed Oversight Members", short:"Accept Members",
+   desc:"Each council member formally commits — on the record — to recognize and accept the Citizens Oversight Council members handpicked by the DSA, without modification, rejection, or substitution",
+   std:"We need: Named members publicly accepted · No council veto over DSA selections · Commitment made on camera and in writing",
+   criteria:[
+     {id:"a1", label:"Publicly accepts DSA-named oversight members by name"},
+     {id:"a2", label:"Commits in writing — no council veto over selections"},
+     {id:"a3", label:"Statement made on camera at public meeting"},
+   ]},
+  {id:"oversight", num:2, title:"Citizens Oversight Council", short:"Oversight",
+   desc:"Council members commit to formally recognize and work with the DSA-appointed Citizens Oversight Council as a standing body",
+   std:"We need: Formal recognition in writing · Named oversight members accepted · Regular public meetings guaranteed",
+   criteria:[
+     {id:"o1", label:"Formal written recognition committed"},
+     {id:"o2", label:"DSA-named oversight members accepted"},
+     {id:"o3", label:"Regular public oversight meetings agreed"},
+   ]},
+  {id:"housing", num:3, title:"Affordable Housing", short:"Housing",
+   desc:"Binding deed-restricted units · codified in the development agreement — no voluntary pledges",
+   std:"We need: Specific % of units · Income thresholds · Deed restrictions in writing",
+   criteria:[
+     {id:"h1", label:"Binding unit % committed"},
+     {id:"h2", label:"Deed restrictions in agreement"},
+     {id:"h3", label:"Statement made on camera"},
+   ]},
+  {id:"water", num:4, title:"Water Consumption", short:"Water",
+   desc:"Independent impact study before any further approvals · results posted publicly · developer covers mitigation",
+   std:"We need: Independent study ordered · Hard deadline set · Developer pays — not taxpayers",
+   criteria:[
+     {id:"w1", label:"Independent study ordered"},
+     {id:"w2", label:"Hard deadline set"},
+     {id:"w3", label:"Developer pays mitigation costs"},
+   ]},
+  {id:"liability", num:5, title:"Taxpayer Liability", short:"Liability",
+   desc:"Full public accounting of all subsidies · tax abatements · infrastructure costs · no backroom deals",
+   std:"We need: Full cost disclosure · All negotiations on video · All votes on public record",
+   criteria:[
+     {id:"l1", label:"Full cost disclosure committed"},
+     {id:"l2", label:"All negotiations on video"},
+     {id:"l3", label:"No hidden tax abatements"},
+   ]},
+  {id:"jobs", num:6, title:"Local Jobs — Greeley First", short:"Jobs",
+   desc:"Hiring targets for Greeley residents · living wage floors · annual verification · codified in agreement",
+   std:"We need: Hiring % targets · Wage floors in writing · Annual public reporting",
+   criteria:[
+     {id:"j1", label:"Greeley hiring targets set"},
+     {id:"j2", label:"Living wage floors committed"},
+     {id:"j3", label:"Annual verification agreed"},
+   ]},
+];
+
+const STATUS = {
+  committed: {icon:"✓", short:"Committed",           long:"Committed on record",       positive:true},
+  met:       {icon:"★", short:"Met Commitment",      long:"Commitment fully met",      positive:true},
+  refused:   {icon:"✗", short:"Refused",              long:"Refused / opposed",         positive:false},
+  failed:    {icon:"✗", short:"Failed Constituency", long:"Failed their constituency", positive:false},
+  noresp:    {icon:"?", short:"No Response",          long:"No response / stalling",    positive:false},
+  blank:     {icon:"—", short:"Not Tracked",          long:"Not tracked yet",           positive:null},
+};
+
+/* ── OVERSIGHT MEMBERS ── */
+const MAX_OVERSIGHT = 9;
+let oversightMembers = Array(MAX_OVERSIGHT).fill("");
+
+/* ═══════════════════════════════════════════════════════════════
+   FIREBASE: real-time listener — scores + oversight update live
+   on every device the instant an admin saves a change
+═══════════════════════════════════════════════════════════════ */
+function initFirebase(){
+  const fbStat = document.getElementById("fbStatus");
+
+  // Listen to ALL scorecard data in real time
+  onValue(ref(db, "scorecard"), (snapshot) => {
+    const data = snapshot.val() || {};
+    scores           = data.scores  || {};
+    oversightMembers = data.oversight
+      ? (Array.isArray(data.oversight) ? data.oversight : Object.values(data.oversight))
+      : Array(MAX_OVERSIGHT).fill("");
+    // Pad to MAX_OVERSIGHT
+    while(oversightMembers.length < MAX_OVERSIGHT) oversightMembers.push("");
+
+    // Fill blanks for any missing score keys
+    DEMANDS.forEach(d => d.criteria.forEach(c => OFFICIALS.forEach(o => {
+      const k = fbKey(d.id, c.id, o.id);
+      if(!scores[k]) scores[k] = "blank";
+    })));
+
+    if(data.lastUpdated) stamp(data.lastUpdated);
+
+    fbStat.textContent  = "● Live";
+    fbStat.className    = "fb-status live";
+
+    render();
+    if(isAdmin) renderOversightGrid();
+  }, (err) => {
+    fbStat.textContent = "✗ Offline";
+    fbStat.className   = "fb-status error";
+    console.error("Firebase read error:", err);
+  });
+}
+
+/* Firebase uses flat key strings safe for its path rules */
+function fbKey(d, c, o){ return `${d}__${c}__${o}`; }
+
+/* Write a single score to Firebase */
+function save(k, v){
+  scores[k] = v;
+  const ts = new Date().toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  const updates = {};
+  updates[`scorecard/scores/${k}`]    = v;
+  updates[`scorecard/lastUpdated`]    = ts;
+  update(ref(db), updates);
+  stamp(ts);
+}
+
+/* Write all oversight member names to Firebase */
+function saveOversightMembers(){
+  // Collect from inline inputs in Demand 1 left column
+  document.querySelectorAll(".oversight-member-inline").forEach(inp => {
+    const idx = parseInt(inp.getAttribute("data-idx"));
+    oversightMembers[idx] = inp.value.trim();
+  });
+  // Also collect from panel inputs
+  document.querySelectorAll(".oversight-input").forEach((inp, i) => {
+    if(inp.value.trim()) oversightMembers[i] = inp.value.trim();
+  });
+  set(ref(db, "scorecard/oversight"), oversightMembers);
+  const saved = document.getElementById("oversightSaved");
+  if(saved){ saved.style.display="inline"; setTimeout(()=>saved.style.display="none", 2200); }
+}
+
+function updateOversightMember(input){
+  const idx = parseInt(input.getAttribute("data-idx"));
+  oversightMembers[idx] = input.value;
+}
+
+function renderOversightGrid(){
+  const grid = document.getElementById("oversightGrid");
+  if(!grid) return;
+  grid.innerHTML = "";
+  for(let i = 0; i < MAX_OVERSIGHT; i++){
+    const field = document.createElement("div");
+    field.className = "oversight-field";
+    field.innerHTML = '<div class="oversight-label">Member '+(i+1)+'</div>'
+      +'<input class="oversight-input" type="text" placeholder="Enter name..." value="'+(oversightMembers[i]||'')+'" />';
+    grid.appendChild(field);
+  }
+}
+
+function stamp(ts){
+  ["lastUpdatedMast","lastUpdFooter"].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.textContent = "Last updated: " + ts;
+  });
+}
+
+/* ── SCORE CALCULATIONS ── */
+function calcScore(oid){
+  let total=0, positive=0;
+  DEMANDS.forEach(d => d.criteria.forEach(cr => {
+    const v = scores[fbKey(d.id, cr.id, oid)];
+    if(!v || v==="blank") return;
+    total++;
+    if(STATUS[v].positive === true) positive++;
+  }));
+  return { total, positive, pct: total===0 ? null : Math.round((positive/total)*100) };
+}
+
+function demandScore(demand, oid){
+  let t=0, p=0;
+  demand.criteria.forEach(cr => {
+    const v = scores[fbKey(demand.id, cr.id, oid)];
+    if(!v || v==="blank") return;
+    t++; if(STATUS[v].positive===true) p++;
+  });
+  return {t,p};
+}
+
+function demandTally(d){
+  const out = {};
+  OFFICIALS.forEach(o => {
+    let t=0, p=0;
+    d.criteria.forEach(cr => {
+      const v = scores[fbKey(d.id, cr.id, o.id)];
+      if(!v || v==="blank") return;
+      t++; if(STATUS[v].positive===true) p++;
+    });
+    out[o.id] = {t,p};
+  });
+  return out;
+}
+
+function grade(pct){
+  if(pct===null) return "X";
+  if(pct>=80) return "A"; if(pct>=60) return "B";
+  if(pct>=40) return "C"; if(pct>=20) return "D";
+  return "F";
+}
+
+function gradeColor(g){
+  return {A:"#1e8449",B:"#0a5c8a",C:"#b7800a",D:"#c0392b",F:"#922b21",X:"#bbb"}[g];
+}
+
+function badgeCls(t,p){
+  if(t===0) return "none";
+  const r=p/t;
+  return r>=0.67?"high":r>=0.34?"mid":"low";
+}
+
+/* ── RENDER ── */
+function render(){
+  const el = document.getElementById("mainContent");
+  let h = "";
+
+  DEMANDS.forEach(d => {
+    const tally = demandTally(d);
+    h += `<div class="demand-block">
+<div class="demand-hdr">
+  <div class="${(d.id==='oversight'||d.id==='accept')?'d-num oversight':'d-num'}">${d.num}</div>
+  <div class="d-text">
+    <div class="d-title">${d.title}</div>
+    <div class="d-desc">${d.desc}</div>
+    <div class="d-std">${d.std}</div>
+  </div>
+</div>
+<div class="tbl-wrap"><table class="demand-tbl">
+<thead><tr>
+  <th class="crit-th">Criterion</th>
+  ${OFFICIALS.map(o=>`<th class="off-th">${o.name}<span class="role">${o.role}</span></th>`).join("")}
+</tr></thead>
+<tbody>`;
+
+    d.criteria.forEach((cr, crIdx) => {
+      let memberHtml = "";
+
+      // DEMAND 1 (accept): admin sees inline inputs; public sees saved names
+      if(d.id === "accept"){
+        const startIdx = crIdx * 3;
+        const members  = oversightMembers.slice(startIdx, startIdx+3).filter(m=>m);
+        if(isAdmin){
+          memberHtml = '<div style="margin-top:6px;display:flex;flex-direction:column;gap:3px">';
+          for(let mi=0; mi<3; mi++){
+            const gi  = startIdx + mi;
+            const val = (oversightMembers[gi]||"").replace(/"/g,'&quot;');
+            memberHtml += `<input class="oversight-member-inline" data-idx="${gi}" type="text"
+              placeholder="Member name ${gi+1}…" value="${val}"
+              oninput="updateOversightMember(this)"
+              style="font-family:'Libre Franklin',sans-serif;font-size:10px;padding:3px 6px;
+                     border:1px solid #0a5c8a;background:#f0f8ff;color:#1c1c1c;width:100%"/>`;
+          }
+          memberHtml += `<button onclick="saveOversightMembers()"
+            style="font-family:'Libre Franklin',sans-serif;font-size:8px;font-weight:700;
+                   letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border:none;
+                   background:#0a5c8a;color:#fff;cursor:pointer;margin-top:2px;align-self:flex-start">
+            Save ✓</button></div>`;
+        } else if(members.length > 0){
+          memberHtml = '<div style="margin-top:4px">'
+            + members.map(m=>`<div class="oversight-member-name">${m}</div>`).join("")
+            + '</div>';
+        }
+      }
+
+      // DEMAND 2 (oversight): shows saved names for everyone
+      if(d.id === "oversight"){
+        const startIdx = crIdx * 3;
+        const members  = oversightMembers.slice(startIdx, startIdx+3).filter(m=>m);
+        if(members.length > 0){
+          memberHtml = '<div style="margin-top:4px">'
+            + members.map(m=>`<div class="oversight-member-name">${m}</div>`).join("")
+            + '</div>';
+        } else if(isAdmin){
+          memberHtml = '<div style="font-size:8px;color:#bbb;font-style:italic;margin-top:3px">Enter member names in Demand 1 ↑</div>';
+        }
+      }
+
+      h += '<tr><td class="crit-td">' + cr.label + memberHtml + '</td>';
+      OFFICIALS.forEach(o => {
+        const k   = fbKey(d.id, cr.id, o.id);
+        const v   = scores[k] || "blank";
+        const cls = isAdmin ? "spip clickable" : "spip";
+        const oc  = isAdmin
+          ? `onclick="openModal('${d.id}','${cr.id}','${o.id}','${k}','${v}')"`
+          : "";
+        h += `<td class="sc-td"><div class="${cls} ${v}" ${oc} title="${STATUS[v].long}">${STATUS[v].icon}</div></td>`;
+      });
+      h += '</tr>';
+    });
+
+    h += `</tbody>
+<tfoot><tr class="total-row">
+  <td class="total-label">Score</td>
+  ${OFFICIALS.map(o=>{
+    const {t,p}=tally[o.id];
+    if(t===0) return `<td class="sc-td"><span class="total-badge none">—</span></td>`;
+    return `<td class="sc-td"><span class="total-badge ${badgeCls(t,p)}">${p}/${t}</span></td>`;
+  }).join("")}
+</tr></tfoot>
+</table></div>
+</div>`;
+  });
+
+  /* OVERALL GRADE */
+  h += `<div class="overall-section">
+<div class="overall-hdr">
+  <div class="overall-hdr-title">Overall Accountability Grade</div>
+  <div class="overall-hdr-sub">All 6 demands · 18 criteria · Live · Updates with every change above</div>
+</div>
+<div class="overall-grid">`;
+
+  OFFICIALS.forEach(o => {
+    const sc    = calcScore(o.id);
+    const g     = grade(sc.pct);
+    const pctStr= sc.pct===null?"No data yet":sc.pct+"%";
+    const subStr= sc.pct===null?"": `${sc.positive} of ${sc.total} tracked`;
+    const barW  = sc.pct||0;
+    const gCls  = g==="X"?"X":g;
+
+    h += `<div class="oc">
+  <div class="oc-name">${o.name}</div>
+  <div class="oc-role">${o.role}</div>
+  <div class="oc-grade ${gCls}">${g==="X"?"?":g}</div>
+  <div class="oc-pct ${gCls}">${pctStr}</div>
+  <div class="oc-sub">${subStr}</div>
+  <div class="oc-bar-bg"><div class="oc-bar-fill ${gCls}" style="width:${barW}%"></div></div>
+  <div class="oc-demands">`;
+
+    DEMANDS.forEach(d => {
+      const ds     = demandScore(d, o.id);
+      const dLabel = ds.t===0?"—":`${ds.p}/${ds.t}`;
+      const dCls   = ds.t===0?"oc-dl-blank":ds.p===ds.t?"oc-dl-good":ds.p>0?"oc-dl-mid":"oc-dl-bad";
+      h += `<div class="oc-demand-row">
+    <div class="oc-demand-label">${d.short.substring(0,3).toUpperCase()}</div>
+    <div class="oc-dots">`;
+      d.criteria.forEach(cr => {
+        const v = scores[fbKey(d.id,cr.id,o.id)]||"blank";
+        h += `<div class="mini-dot ${v}" title="${d.short}: ${STATUS[v].short}"></div>`;
+      });
+      h += `</div><div class="oc-dl ${dCls}">${dLabel}</div></div>`;
+    });
+    h += `</div></div>`;
+  });
+
+  h += `</div></div>`;
+
+  /* JOIN BOX */
+  h += `<div class="join-box">
+<div class="join-inner">
+  <div class="join-hdr-col">
+    <div class="join-eyebrow">This Is Your Town</div>
+    <div class="join-title">Join the <em>Coalition.</em></div>
+    <div class="join-tagline">"No taxation without representation."</div>
+  </div>
+  <div class="join-content">
+    <div class="join-pitch">This scorecard updates every time a council member speaks, votes, stays silent — or makes a promise and breaks it. <strong>You help make that happen.</strong> Our coalition tracks every meeting, files public records requests, shows up at City Hall, and posts the receipts — free, for everyone. The Cascadia Data Center project affects your water, your housing, your taxes, and your neighbors' jobs. <strong>This is your town. Stay in the fight.</strong></div>
+    <div class="join-steps">
+      <div class="join-step"><div class="step-n">1</div><div class="step-t"><span class="ptag gold">Skool</span><strong>Organizing HQ.</strong> Real-time alerts &amp; accountability clips. Search <strong>"Greeley Accountability"</strong> on Skool.com</div></div>
+      <div class="join-step"><div class="step-n">2</div><div class="step-t"><span class="ptag red">Meetup</span><strong>Show up in person.</strong> Monthly briefings &amp; council-meeting prep. Search <strong>"Greeley Civic Accountability"</strong></div></div>
+      <div class="join-step"><div class="step-n">3</div><div class="step-t"><span class="ptag blue">Facebook</span><strong>Daily updates.</strong> Council clips, scorecard posts, neighbor stories. Search <strong>"Greeley Accountability Coalition"</strong></div></div>
+      <div class="join-step"><div class="step-n">4</div><div class="step-t"><strong>Tell ten people.</strong> Not a group text — ten real conversations. Pass this scorecard along.</div></div>
+    </div>
+  </div>
+</div>
+</div>`;
+
+  el.innerHTML = h;
+}
+
+/* ── MODAL ── */
+function openModal(did, cid, oid, k, current){
+  modalCtx={k}; modalSel=current;
+  const d  = DEMANDS.find(x=>x.id===did);
+  const cr = d.criteria.find(x=>x.id===cid);
+  const o  = OFFICIALS.find(x=>x.id===oid);
+  const opt = (s) => `<div class="modal-opt ${s===current?"selected":""}" onclick="selOpt(this,'${s}')">
+  <div class="opt-icon ${s}">${STATUS[s].icon}</div>
+  <div><div class="opt-short">${STATUS[s].short}</div><div class="opt-long">${STATUS[s].long}</div></div>
+</div>`;
+  document.getElementById("modalBox").innerHTML = `
+<div class="modal-hdr"><h3>${o.name}</h3><p>${d.title} · ${cr.label}</p></div>
+<div class="modal-body">
+  <div class="modal-sec pos">✓ Positive — promise made or kept</div>
+  <div class="modal-opts">${opt("committed")}${opt("met")}</div>
+  <div class="modal-sec neg">✗ Negative — refused or failed</div>
+  <div class="modal-opts">${opt("refused")}${opt("failed")}</div>
+  <div class="modal-sec neu">Pending or untracked</div>
+  <div class="modal-opts">${opt("noresp")}${opt("blank")}</div>
+  <div class="modal-actions">
+    <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+    <button class="btn-save" onclick="commitModal()">Save</button>
+  </div>
+</div>`;
+  document.getElementById("modalOverlay").style.display="flex";
+}
+
+function selOpt(el,val){
+  document.querySelectorAll(".modal-opt").forEach(e=>e.classList.remove("selected"));
+  el.classList.add("selected"); modalSel=val;
+}
+
+function commitModal(){
+  if(modalCtx && modalSel){ save(modalCtx.k, modalSel); closeModal(); }
+}
+
+function closeModal(){
+  document.getElementById("modalOverlay").style.display="none";
+  modalCtx=null;
+}
+
+function handleOverlayClick(e){
+  if(e.target===document.getElementById("modalOverlay")) closeModal();
+}
+
+function toggleLogin(){
+  const p=document.getElementById("loginPanel");
+  p.style.display=(p.style.display==="none"||!p.style.display)?"block":"none";
+}
+
+function doLogin(){
+  const entered=document.getElementById("pwInput").value;
+  const match=ADMINS.find(a=>a.pw===entered);
+  if(match){
+    isAdmin=true; currentAdmin=match.name;
+    document.getElementById("loginPanel").style.display   ="none";
+    document.getElementById("adminBtn").style.display     ="none";
+    document.getElementById("adminNotice").style.display  ="inline-block";
+    document.getElementById("adminNotice").textContent    ="● Admin: "+match.name;
+    document.getElementById("logoutBtn").style.display    ="inline-block";
+    document.getElementById("oversightPanel").style.display="block";
+    document.getElementById("loginErr").textContent       ="";
+    document.getElementById("pwInput").value              ="";
+    renderOversightGrid();
+    render();
+  } else {
+    document.getElementById("loginErr").textContent="Incorrect password.";
+  }
+}
+
+function doLogout(){
+  isAdmin=false; currentAdmin=null;
+  document.getElementById("adminBtn").style.display      ="inline-block";
+  document.getElementById("adminNotice").style.display   ="none";
+  document.getElementById("logoutBtn").style.display     ="none";
+  document.getElementById("oversightPanel").style.display="none";
+  render();
+}
+
+/* ── Expose functions that are called from inline HTML handlers ── */
+window.toggleLogin         = toggleLogin;
+window.doLogin             = doLogin;
+window.doLogout            = doLogout;
+window.openModal           = openModal;
+window.selOpt              = selOpt;
+window.commitModal         = commitModal;
+window.closeModal          = closeModal;
+window.handleOverlayClick  = handleOverlayClick;
+window.saveOversightMembers= saveOversightMembers;
+window.updateOversightMember=updateOversightMember;
+
+/* ── BOOT ── */
+render();          // render blank shell immediately while Firebase connects
+initFirebase();    // then connect and fill with live data
+
+</script>
+</body>
+</html>
