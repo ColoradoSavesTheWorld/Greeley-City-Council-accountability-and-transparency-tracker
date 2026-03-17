@@ -9,8 +9,6 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{font-family:'Libre Franklin',sans-serif;font-size:14px;background:#f0ebe0;color:#1c1c1c}
 body{min-height:100vh;background:#f0ebe0}
-
-/* MASTHEAD */
 .masthead{background:#1c1c1c;border-bottom:4px solid #c0392b}
 .masthead-inner{max-width:1140px;margin:0 auto;padding:20px 24px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .mast-kicker{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#c0392b;margin-bottom:5px}
@@ -20,8 +18,6 @@ body{min-height:100vh;background:#f0ebe0}
 .mast-right{text-align:right;flex-shrink:0}
 .mast-date{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.32);margin-bottom:4px}
 .mast-tagline{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#c0392b}
-
-/* EXPLAIN BAR */
 .explain-bar{background:#e8e2d6;border-bottom:1px solid #d0c8bb;padding:8px 24px}
 .explain-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 .explain-text{font-size:11px;color:#555;flex:1;min-width:200px;line-height:1.5}
@@ -30,41 +26,40 @@ body{min-height:100vh;background:#f0ebe0}
 .legend-label{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999}
 .leg{display:flex;align-items:center;gap:4px;font-size:9px;font-weight:600;color:#555;white-space:nowrap}
 .pip{width:13px;height:13px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}
-.pip.committed{background:#1e8449;color:#fff}
-.pip.met      {background:#0a5c8a;color:#fff}
-.pip.refused  {background:#c0392b;color:#fff}
-.pip.failed   {background:#6b0000;color:#fff}
-.pip.noresp   {background:#e8a020;color:#fff}
-.pip.blank    {background:#bbb;color:#666}
-
-/* ADMIN BAR */
+.pip.committed{background:#1e8449;color:#fff}.pip.met{background:#0a5c8a;color:#fff}.pip.refused{background:#c0392b;color:#fff}
+.pip.failed{background:#6b0000;color:#fff}.pip.noresp{background:#e8a020;color:#fff}.pip.blank{background:#bbb;color:#666}
 .admin-bar{background:#1c1c1c;padding:6px 24px}
 .admin-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:10px}
 .admin-notice{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#1e8449;background:rgba(30,132,73,0.15);padding:3px 9px;border:1px solid rgba(30,132,73,0.3)}
 .btn{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 13px;cursor:pointer;border:none;transition:background 0.15s}
-.btn-admin{background:#c0392b;color:#fff}
-.btn-admin:hover{background:#922b21}
+.btn-admin{background:#c0392b;color:#fff}.btn-admin:hover{background:#922b21}
 .btn-logout{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15)}
 .btn-logout:hover{background:rgba(255,255,255,0.14)}
-
-/* FIREBASE STATUS */
 .fb-status{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
 .fb-status.connecting{color:#b7800a;background:rgba(184,128,10,0.12);border:1px solid rgba(184,128,10,0.3)}
 .fb-status.live{color:#1e8449;background:rgba(30,132,73,0.12);border:1px solid rgba(30,132,73,0.3)}
 .fb-status.error{color:#c0392b;background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.3)}
-
+/* NAV TABS */
+.page-nav{background:#2a2a2a;border-bottom:2px solid #c0392b;padding:0 24px}
+.page-nav-inner{max-width:1140px;margin:0 auto;display:flex;gap:0}
+.nav-tab{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 16px;color:rgba(255,255,255,0.45);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;border:none;background:none;transition:color 0.15s}
+.nav-tab:hover{color:rgba(255,255,255,0.75)}
+.nav-tab.active{color:#fff;border-bottom:2px solid #c0392b}
 /* LOGIN */
 .login-panel{background:#f0ebe0;border-bottom:3px solid #c0392b;padding:18px 24px;display:none}
-.login-box{max-width:310px;margin:0 auto;background:#fff;border:1px solid #d0c8bb;padding:18px}
+.login-box{max-width:360px;margin:0 auto;background:#fff;border:1px solid #d0c8bb;padding:18px}
 .login-box h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:4px}
 .login-box p{font-size:11px;color:#777;margin-bottom:12px}
 .login-box input{width:100%;border:1px solid #d0c8bb;padding:7px 9px;font-size:12px;font-family:'Libre Franklin',sans-serif;margin-bottom:9px;background:#f7f5f0;color:#1c1c1c}
 .login-box input:focus{outline:none;border-color:#c0392b}
 .err-msg{font-size:11px;color:#c0392b;margin-top:4px}
-
+.login-forgot{font-size:10px;color:#0a5c8a;cursor:pointer;text-decoration:underline;margin-top:4px;display:inline-block}
+.reset-section{margin-top:14px;padding-top:14px;border-top:1px solid #e0d8cc;display:none}
+.reset-section p{font-size:10px;color:#555;margin-bottom:8px;line-height:1.5}
+.reset-code-display{font-family:monospace;font-size:13px;font-weight:700;background:#1c1c1c;color:#1e8449;padding:6px 12px;letter-spacing:3px;display:inline-block;margin-bottom:8px}
 /* MAIN */
 .main{max-width:1140px;margin:0 auto;padding:16px 24px 0}
-
+.page-section{display:none}.page-section.active{display:block}
 /* DEMAND BLOCKS */
 .demand-block{background:#fff;border:1px solid #d0c8bb;margin-bottom:12px;overflow:hidden}
 .demand-hdr{display:flex;align-items:stretch;background:#1c1c1c}
@@ -74,12 +69,10 @@ body{min-height:100vh;background:#f0ebe0}
 .d-title{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#fff;line-height:1.1}
 .d-desc{font-size:8.5px;font-weight:300;color:rgba(255,255,255,0.4);margin-top:2px}
 .d-std{font-size:8.5px;font-weight:600;color:#e8a020;margin-top:2px}
-
-/* SCORE TABLE */
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
 table{width:100%;border-collapse:collapse;font-size:11px}
 table.demand-tbl{min-width:820px}
-th{padding:5px 5px;font-size:8px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#888;border-bottom:1.5px solid #1c1c1c;background:#f7f3ee;white-space:nowrap;text-align:center}
+th{padding:5px;font-size:8px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#888;border-bottom:1.5px solid #1c1c1c;background:#f7f3ee;white-space:nowrap;text-align:center}
 th.crit-th{text-align:left;min-width:128px;background:#eee8de}
 td{padding:4px 5px;border-bottom:1px solid #e8e2d6;vertical-align:middle}
 tr:last-child td{border-bottom:none}
@@ -88,30 +81,23 @@ tr:last-child td{border-bottom:none}
 .off-th .role{font-size:7px;font-weight:400;color:#999;display:block;text-transform:uppercase;letter-spacing:0.6px;margin-top:1px}
 .sc-td{text-align:center;padding:3px 4px}
 .spip{width:24px;height:24px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;cursor:default;transition:transform 0.1s;line-height:1}
-.spip.clickable{cursor:pointer;box-shadow:0 0 0 1px rgba(0,0,0,0.1)}
-.spip.clickable:hover{transform:scale(1.15)}
+.spip.clickable{cursor:pointer;box-shadow:0 0 0 1px rgba(0,0,0,0.1)}.spip.clickable:hover{transform:scale(1.15)}
 .spip.committed{background:#d5f0e2;color:#1e8449;border:1.5px solid #1e8449}
-.spip.met      {background:#d0eaf8;color:#0a5c8a;border:1.5px solid #0a5c8a}
-.spip.refused  {background:#fde8e8;color:#c0392b;border:1.5px solid #c0392b}
-.spip.failed   {background:#f5d0d0;color:#6b0000;border:1.5px solid #6b0000}
-.spip.noresp   {background:#fef3d0;color:#b7800a;border:1.5px solid #e8a020}
-.spip.blank    {background:#f0ebe0;color:#bbb;border:1.5px dashed #ccc}
-
-/* TOTAL ROW */
+.spip.met{background:#d0eaf8;color:#0a5c8a;border:1.5px solid #0a5c8a}
+.spip.refused{background:#fde8e8;color:#c0392b;border:1.5px solid #c0392b}
+.spip.failed{background:#f5d0d0;color:#6b0000;border:1.5px solid #6b0000}
+.spip.noresp{background:#fef3d0;color:#b7800a;border:1.5px solid #e8a020}
+.spip.blank{background:#f0ebe0;color:#bbb;border:1.5px dashed #ccc}
 .total-row td{background:#1c1c1c;border-bottom:none;padding:4px 5px}
 .total-label{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)}
 .total-badge{display:inline-block;font-family:'Playfair Display',serif;font-size:9.5px;font-weight:900;padding:2px 5px}
-.total-badge.high{background:#d5f0e2;color:#1e8449}
-.total-badge.mid {background:#fef3d0;color:#b7800a}
-.total-badge.low {background:#fde8e8;color:#c0392b}
-.total-badge.none{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.28)}
-
-/* OVERALL GRADE SECTION */
+.total-badge.high{background:#d5f0e2;color:#1e8449}.total-badge.mid{background:#fef3d0;color:#b7800a}
+.total-badge.low{background:#fde8e8;color:#c0392b}.total-badge.none{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.28)}
 .overall-section{background:#fff;border:1px solid #d0c8bb;margin-bottom:14px;overflow:hidden}
 .overall-hdr{background:#1c1c1c;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c0392b}
 .overall-hdr-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff}
 .overall-hdr-sub{font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase}
-.overall-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:0;border-top:none}
+.overall-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:0}
 .oc{border-right:1px solid #e8e2d6;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:5px}
 .oc:last-child{border-right:none}
 .oc-name{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;color:#1c1c1c;text-align:center;line-height:1.2}
@@ -132,7 +118,6 @@ tr:last-child td{border-bottom:none}
 .mini-dot{width:6px;height:6px;border-radius:1px;flex-shrink:0}
 .mini-dot.committed{background:#1e8449}.mini-dot.met{background:#0a5c8a}.mini-dot.refused{background:#c0392b}
 .mini-dot.failed{background:#6b0000}.mini-dot.noresp{background:#e8a020}.mini-dot.blank{background:#ddd}
-
 /* JOIN BOX */
 .join-box{background:#fff;border:2px solid #c0392b;margin-bottom:18px;overflow:hidden}
 .join-inner{display:grid;grid-template-columns:200px 1fr;gap:0}
@@ -142,21 +127,13 @@ tr:last-child td{border-bottom:none}
 .join-title em{font-style:italic}
 .join-tagline{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.65);margin-top:8px}
 .join-content{padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-.join-pitch{font-size:11px;color:#444;line-height:1.55}
-.join-pitch strong{color:#1c1c1c;font-weight:700}
+.join-pitch{font-size:11px;color:#444;line-height:1.55}.join-pitch strong{color:#1c1c1c;font-weight:700}
 .join-steps{display:flex;flex-direction:column;gap:6px}
 .join-step{display:flex;align-items:flex-start;gap:8px}
 .step-n{background:#1c1c1c;color:#fff;font-family:'Playfair Display',serif;font-size:9px;font-weight:900;width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-t{font-size:10px;color:#333;line-height:1.45}
-.step-t strong{font-weight:700;color:#1c1c1c}
+.step-t{font-size:10px;color:#333;line-height:1.45}.step-t strong{font-weight:700;color:#1c1c1c}
 .ptag{display:inline-block;padding:0 4px;font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-right:3px}
 .ptag.red{background:#c0392b}.ptag.gold{background:#e8a020;color:#1c1c1c}.ptag.blue{background:#1877F2}
-@media(max-width:700px){
-  .join-inner{grid-template-columns:1fr}
-  .join-content{grid-template-columns:1fr}
-  .overall-grid{grid-template-columns:repeat(2,1fr)}
-}
-
 /* FOOTER */
 .footer{background:#1c1c1c;border-top:3px solid #c0392b;padding:9px 24px}
 .footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
@@ -164,7 +141,6 @@ tr:last-child td{border-bottom:none}
 .footer-center{font-family:'Playfair Display',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.4)}
 .footer-right{font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c0392b}
 .last-upd{font-size:8.5px;color:rgba(255,255,255,0.2);margin-top:2px}
-
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;z-index:9999}
 .modal{background:#fff;border:2px solid #1c1c1c;min-width:290px;max-width:370px;overflow:hidden}
@@ -176,20 +152,21 @@ tr:last-child td{border-bottom:none}
 .modal-sec.pos{color:#1e8449}.modal-sec.neg{color:#c0392b}.modal-sec.neu{color:#b7800a}
 .modal-opts{display:flex;flex-direction:column;gap:5px;margin-bottom:8px}
 .modal-opt{display:flex;align-items:center;gap:9px;padding:7px 10px;border:1px solid #e0d8cc;cursor:pointer;transition:background 0.1s}
-.modal-opt:hover{background:#f7f3ee}
-.modal-opt.selected{border-color:#c0392b;background:#fff8f7}
+.modal-opt:hover{background:#f7f3ee}.modal-opt.selected{border-color:#c0392b;background:#fff8f7}
 .opt-icon{width:19px;height:19px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0}
 .opt-icon.committed{background:#d5f0e2;color:#1e8449;border:1px solid #1e8449}
-.opt-icon.met      {background:#d0eaf8;color:#0a5c8a;border:1px solid #0a5c8a}
-.opt-icon.refused  {background:#fde8e8;color:#c0392b;border:1px solid #c0392b}
-.opt-icon.failed   {background:#f5d0d0;color:#6b0000;border:1px solid #6b0000}
-.opt-icon.noresp   {background:#fef3d0;color:#b7800a;border:1px solid #e8a020}
-.opt-icon.blank    {background:#f0ebe0;color:#bbb;border:1px dashed #ccc}
-.opt-short{font-size:10px;font-weight:700;color:#1c1c1c}
-.opt-long {font-size:8.5px;color:#888}
+.opt-icon.met{background:#d0eaf8;color:#0a5c8a;border:1px solid #0a5c8a}
+.opt-icon.refused{background:#fde8e8;color:#c0392b;border:1px solid #c0392b}
+.opt-icon.failed{background:#f5d0d0;color:#6b0000;border:1px solid #6b0000}
+.opt-icon.noresp{background:#fef3d0;color:#b7800a;border:1px solid #e8a020}
+.opt-icon.blank{background:#f0ebe0;color:#bbb;border:1px dashed #ccc}
+.opt-short{font-size:10px;font-weight:700;color:#1c1c1c}.opt-long{font-size:8.5px;color:#888}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;padding-top:9px;border-top:1px solid #e8e2d6}
-
-/* OVERSIGHT MEMBER PANEL */
+.btn-cancel{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:1px solid #ccc;background:transparent;color:#777;cursor:pointer}
+.btn-cancel:hover{background:#f7f3ee}
+.btn-save{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:none;background:#c0392b;color:#fff;cursor:pointer}
+.btn-save:hover{background:#922b21}
+/* OVERSIGHT PANEL */
 .oversight-panel{background:#1c1c1c;border-bottom:3px solid #0a5c8a;padding:10px 24px;display:none}
 .oversight-inner{max-width:1140px;margin:0 auto}
 .oversight-title{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#fff;letter-spacing:1px;margin-bottom:8px}
@@ -203,17 +180,51 @@ tr:last-child td{border-bottom:none}
 .oversight-save{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;cursor:pointer;border:none;background:#0a5c8a;color:#fff;margin-top:10px;transition:background 0.15s}
 .oversight-save:hover{background:#084a72}
 .oversight-saved{font-size:10px;color:#1e8449;font-style:italic;margin-left:10px;display:none}
-.oversight-members-col{background:#f0ebe0;font-size:9px;color:#555;line-height:1.55;padding:5px 8px}
 .oversight-member-name{font-weight:700;color:#0a5c8a}
-.btn-cancel{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:1px solid #ccc;background:transparent;color:#777;cursor:pointer}
-.btn-cancel:hover{background:#f7f3ee}
-.btn-save{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:none;background:#c0392b;color:#fff;cursor:pointer}
-.btn-save:hover{background:#922b21}
+/* EXPLAINER PAGE */
+.explainer{max-width:1140px;margin:0 auto;padding:24px 24px 0}
+.ex-hero{background:#1c1c1c;border-bottom:4px solid #c0392b;padding:32px 36px;margin-bottom:20px}
+.ex-hero-kicker{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#c0392b;margin-bottom:8px}
+.ex-hero-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,42px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:10px}
+.ex-hero-title em{color:#c0392b;font-style:normal}
+.ex-hero-body{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:780px}
+.ex-hero-body strong{color:#fff}
+.ex-non-neg{background:#c0392b;padding:20px 36px;margin-bottom:20px;border-left:6px solid #6b0000}
+.ex-non-neg-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:900;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.ex-non-neg-body{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.75;max-width:900px}
+.ex-non-neg-body strong{color:#fff;font-weight:800}
+.ex-board{background:#fff;border:1px solid #d0c8bb;margin-bottom:20px;overflow:hidden}
+.ex-board-hdr{background:#0a5c8a;padding:12px 18px;display:flex;align-items:center;gap:12px}
+.ex-board-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:rgba(255,255,255,0.3);flex-shrink:0}
+.ex-board-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff}
+.ex-board-sub{font-size:9px;color:rgba(255,255,255,0.5);margin-top:2px;font-weight:300;letter-spacing:1px;text-transform:uppercase}
+.ex-board-body{padding:16px 18px}
+.ex-board-members{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.ex-member-card{background:#f0f8ff;border:1px solid #0a5c8a;padding:6px 12px;font-size:11px}
+.ex-member-role{font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a5c8a;display:block;margin-bottom:1px}
+.ex-member-name{font-weight:700;color:#1c1c1c}
+.ex-section{background:#fff;border:1px solid #d0c8bb;margin-bottom:20px;overflow:hidden}
+.ex-section-hdr{background:#1c1c1c;padding:12px 18px;display:flex;align-items:center;gap:12px}
+.ex-section-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#c0392b;flex-shrink:0;min-width:32px}
+.ex-section-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff}
+.ex-section-sub{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;font-weight:300;letter-spacing:1px;text-transform:uppercase}
+.ex-section-body{padding:16px 18px;font-size:12px;color:#444;line-height:1.7}
+.ex-section-body strong{color:#1c1c1c;font-weight:700}
+.ex-demand-list{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:5px}
+.ex-demand-list li{display:flex;align-items:flex-start;gap:8px;padding:6px 10px;background:#faf8f5;border-left:3px solid #c0392b;font-size:11px}
+.ex-demand-list li::before{content:"▸";color:#c0392b;font-weight:700;flex-shrink:0;margin-top:1px}
+.ex-quote{background:#1c1c1c;padding:16px 20px;margin:14px 0;border-left:4px solid #e8a020}
+.ex-quote-text{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#fff;line-height:1.55}
+.ex-quote-attr{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e8a020;margin-top:6px}
+@media(max-width:700px){
+  .join-inner{grid-template-columns:1fr}.join-content{grid-template-columns:1fr}
+  .overall-grid{grid-template-columns:repeat(2,1fr)}
+  .ex-board-members{flex-direction:column}
+}
 </style>
 </head>
 <body>
 
-<!-- MASTHEAD -->
 <div class="masthead">
   <div class="masthead-inner">
     <div>
@@ -228,10 +239,9 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- EXPLAIN BAR -->
 <div class="explain-bar">
   <div class="explain-inner">
-    <div class="explain-text">Tracks whether each Greeley City Council member has made a <strong>public, on-record commitment</strong> to our six demands regarding the Cascadia Data Center — and whether they followed through. <strong>Silence is a score. Broken promises are a score.</strong></div>
+    <div class="explain-text">Tracks whether each Greeley City Council member has made a <strong>public, on-record commitment</strong> to our five demands regarding the Cascadia Data Center — and whether they followed through. <strong>Silence is a score. Broken promises are a score.</strong></div>
     <div class="legend">
       <span class="legend-label">Key:</span>
       <div class="leg"><div class="pip committed">✓</div> Committed</div>
@@ -244,13 +254,20 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- ADMIN BAR -->
 <div class="admin-bar">
   <div class="admin-bar-inner">
     <span id="fbStatus" class="fb-status connecting">⟳ Connecting…</span>
     <span id="adminNotice" style="display:none" class="admin-notice">● Admin mode active</span>
     <button class="btn btn-logout" id="logoutBtn" style="display:none" onclick="doLogout()">Lock scorecard</button>
     <button class="btn btn-admin" id="adminBtn" onclick="toggleLogin()">Admin login</button>
+  </div>
+</div>
+
+<!-- PAGE NAV TABS -->
+<div class="page-nav">
+  <div class="page-nav-inner">
+    <button class="nav-tab active" onclick="showPage('scorecard',this)">📊 Scorecard</button>
+    <button class="nav-tab" onclick="showPage('explainer',this)">📖 The Issues Explained</button>
   </div>
 </div>
 
@@ -262,13 +279,20 @@ tr:last-child td{border-bottom:none}
     <input type="password" id="pwInput" placeholder="Password" onkeydown="if(event.key==='Enter')doLogin()"/>
     <button class="btn btn-admin" style="width:100%;padding:8px" onclick="doLogin()">Unlock Scorecard</button>
     <div class="err-msg" id="loginErr"></div>
+    <span class="login-forgot" onclick="toggleReset()">Forgot password?</span>
+    <div class="reset-section" id="resetSection">
+      <p>Contact your coalition administrator to reset your password. Show them this page and have them update the password in the HTML file and re-upload it to Netlify.</p>
+      <p style="margin-top:8px"><strong>Admin recovery contact:</strong></p>
+      <div class="reset-code-display" id="resetCode">ADMIN-RESET</div>
+      <p style="font-size:10px;color:#888;margin-top:6px">Current admins with access: <span id="adminList"></span></p>
+    </div>
   </div>
 </div>
 
 <!-- OVERSIGHT MEMBERS PANEL (admin only) -->
 <div class="oversight-panel" id="oversightPanel">
   <div class="oversight-inner">
-    <div class="oversight-title">Citizens Oversight Council — <span>DSA-Appointed Members</span></div>
+    <div class="oversight-title">Citizens Oversight Council — <span>Many Hands Action Members</span></div>
     <div class="oversight-grid" id="oversightGrid"></div>
     <div style="display:flex;align-items:center;margin-top:10px">
       <button class="oversight-save" onclick="saveOversightMembers()">Save Members</button>
@@ -277,10 +301,239 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="main" id="mainContent"></div>
+<!-- ══════════════════ SCORECARD PAGE ══════════════════ -->
+<div class="page-section active" id="page-scorecard">
+  <div class="main" id="mainContent"></div>
+</div>
 
-<!-- FOOTER -->
+<!-- ══════════════════ EXPLAINER PAGE ══════════════════ -->
+<div class="page-section" id="page-explainer">
+  <div class="explainer">
+
+    <div class="ex-hero">
+      <div class="ex-hero-kicker">Greeley Accountability Coalition · 2026 · Cascadia/Catalyst Project</div>
+      <div class="ex-hero-title">The Issues. The Demands.<br><em>Why This Matters.</em></div>
+      <div class="ex-hero-body">
+        The Cascadia/Catalyst Data Center project is one of the largest public-private development decisions in Greeley's history. It will affect your <strong>water supply, your taxes, your housing costs, and your neighbors' jobs</strong> — for generations. This page explains what we are demanding, why we are demanding it, and why citizen oversight is not optional.
+      </div>
+    </div>
+
+    <!-- NON-NEGOTIABLE BLOCK -->
+    <div class="ex-non-neg">
+      <div class="ex-non-neg-title">⚠ Citizen Oversight Is Non-Negotiable</div>
+      <div class="ex-non-neg-body">
+        Council members have, in their own words, <strong>acknowledged a prior failure of transparency</strong> in how development decisions have been handled. They have conceded that the public has not been adequately informed or included in negotiations involving public resources. This concession is not a minor procedural note — it is a foundational admission.<br><br>
+        Given that acknowledgment, it would be <strong>civic malpractice</strong> to respond by returning that same unchecked responsibility to the same individuals who failed to exercise it properly. Good intentions are not a substitute for structural accountability. History — in Greeley and in cities across America — shows that without independent oversight, development deals that promise public benefit routinely deliver private gain instead.<br><br>
+        <strong>The Citizens Oversight Council is not a request. It is a condition.</strong> Every other demand on this scorecard depends on it. Without oversight, there is no enforcement. Without enforcement, promises are just words. The community did not come to the table asking for trust. We came asking for verification — and that verification requires a body of residents with real authority, named in writing, accepted by the council, and empowered to operate without a council veto.
+      </div>
+    </div>
+
+    <!-- OVERSIGHT BOARD -->
+    <div class="ex-board">
+      <div class="ex-board-hdr">
+        <div class="ex-board-num">§1</div>
+        <div>
+          <div class="ex-board-title">Citizens Oversight Council — Interim Board</div>
+          <div class="ex-board-sub">Many Hands Action · Greeley Residents · Standing Body</div>
+        </div>
+      </div>
+      <div class="ex-board-body">
+        <p style="font-size:12px;color:#444;line-height:1.7;margin-bottom:14px">Until a permanent oversight structure can be formally established through a full public process, the following Greeley residents have been proposed to serve as the interim Citizens Oversight Council. These individuals bring diverse professional backgrounds and community perspectives. <strong>Council members are asked to formally accept these members by name, in writing, on camera — with no veto over the coalition's selections.</strong></p>
+        <div class="ex-board-members">
+          <div class="ex-member-card"><span class="ex-member-role">Co-Chair</span><span class="ex-member-name">Ashley Fusco</span></div>
+          <div class="ex-member-card"><span class="ex-member-role">Co-Chair</span><span class="ex-member-name">Tiffany Simmons</span></div>
+          <div class="ex-member-card"><span class="ex-member-role">Board Member</span><span class="ex-member-name">Antonio Molino</span></div>
+          <div class="ex-member-card"><span class="ex-member-role">Board Member</span><span class="ex-member-name">Sarah Yauchzee Myers</span></div>
+          <div class="ex-member-card"><span class="ex-member-role">Board Member</span><span class="ex-member-name">Rhonda Solis</span></div>
+          <div class="ex-member-card"><span class="ex-member-role">Board Member</span><span class="ex-member-name">Joe Kennedy</span></div>
+        </div>
+        <div class="ex-quote">
+          <div class="ex-quote-text">"All documents, financial projections, and agreements related to the Cascadia/Catalyst project should be publicly accessible. All negotiation sessions involving public funds must be recorded and publicly released within 24 hours."</div>
+          <div class="ex-quote-attr">— Citizen Demand Letter · March 15, 2026</div>
+        </div>
+        <p style="font-size:12px;color:#444;line-height:1.7;margin-top:12px">The oversight council's responsibilities include: reviewing public-private development agreements, monitoring project commitments, ensuring transparency in negotiations, publishing public reports on project performance, and providing community oversight of compliance with all development agreements.</p>
+      </div>
+    </div>
+
+    <!-- DEMAND 2: JOBS -->
+    <div class="ex-section">
+      <div class="ex-section-hdr">
+        <div class="ex-section-num">2</div>
+        <div>
+          <div class="ex-section-title">Local Jobs &amp; Economic Opportunity</div>
+          <div class="ex-section-sub">Greeley First · Living Wages · Local Contracting</div>
+        </div>
+      </div>
+      <div class="ex-section-body">
+        Development supported by public resources must produce measurable economic opportunity for the people of Greeley — not just jobs that go to out-of-town contractors and imported labor. We are demanding binding commitments, not voluntary pledges that disappear after the ribbon cutting.
+        <ul class="ex-demand-list">
+          <li>Minimum <strong>50% local hiring target</strong> for all construction and operational jobs tied to the project</li>
+          <li><strong>Living wage standards with benefits</strong> for all project-related employment — no minimum-wage workarounds</li>
+          <li>State-registered apprenticeship programs prioritizing Greeley youth, workforce development participants, and previously incarcerated residents</li>
+          <li>At least <strong>20% of procurement spending</strong> directed to Greeley-based businesses</li>
+          <li>Affordable commercial space allocated for Greeley startups, artists, inventors, and small businesses</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DEMAND 3: TAXPAYER -->
+    <div class="ex-section">
+      <div class="ex-section-hdr">
+        <div class="ex-section-num">3</div>
+        <div>
+          <div class="ex-section-title">Taxpayer Protection &amp; Fiscal Transparency</div>
+          <div class="ex-section-sub">No Hidden Deals · Full Public Accounting · On-Record Votes</div>
+        </div>
+      </div>
+      <div class="ex-section-body">
+        Residents have a right to know exactly what their tax dollars are subsidizing. No backroom deals. No private agreements on public money. Every commitment involving public funds must be approved through a recorded City Council vote and made available for public review.
+        <ul class="ex-demand-list">
+          <li>Full public disclosure of all <strong>subsidies, tax abatements, infrastructure investments, and public financing arrangements</strong></li>
+          <li>All financial commitments approved through recorded, public City Council votes</li>
+          <li>Increased infrastructure investment for police, roads, water systems, and sewer maintenance impacted by development</li>
+          <li>Consideration of increasing the <strong>special retail tax at the arena from 3% to 12%</strong>, with funds directed to a public trust for community investment</li>
+          <li>No private agreements involving public funds — period</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DEMAND 4: WATER -->
+    <div class="ex-section">
+      <div class="ex-section-hdr">
+        <div class="ex-section-num">4</div>
+        <div>
+          <div class="ex-section-title">Water Stewardship &amp; Environmental Responsibility</div>
+          <div class="ex-section-sub">Independent Study · Developer Pays · Public Meetings</div>
+        </div>
+      </div>
+      <div class="ex-section-body">
+        A data center of this scale has enormous water demands. Greeley's water is a shared resource and a long-term strategic asset for the entire region. No approval should move forward until the full impact is independently studied, publicly disclosed, and developer-funded mitigation is guaranteed in writing.
+        <ul class="ex-demand-list">
+          <li>An <strong>independent water impact study</strong> by qualified third-party experts before any further project approvals</li>
+          <li>Full public release of study results and all associated data</li>
+          <li><strong>Developer bears full mitigation costs</strong> for any environmental or water-resource impacts — not taxpayers</li>
+          <li>Developer funding for stormwater infrastructure and ongoing environmental monitoring</li>
+          <li>Regular public meetings to review environmental compliance, water usage, and air-quality impacts throughout the project lifecycle</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DEMAND 5: HOUSING -->
+    <div class="ex-section">
+      <div class="ex-section-hdr">
+        <div class="ex-section-num">5</div>
+        <div>
+          <div class="ex-section-title">Affordable Housing &amp; Community Stability</div>
+          <div class="ex-section-sub">50% Set-Aside · AMI-Tied Tiers · Eviction Prevention · Bus Hub · Homeless Investment</div>
+        </div>
+      </div>
+      <div class="ex-section-body">
+        Large developments drive up housing costs in surrounding neighborhoods — and Cascadia will be no exception. Without binding deed restrictions written directly into the development agreement, affordable housing pledges are legally unenforceable and historically ignored. <strong>Greeley's Area Median Income is $68,650 annually.</strong> Every affordability calculation, every price threshold, and every income tier in this agreement must be anchored to that number — not to national averages, not to developer projections, not to aspirational targets.
+
+        <div style="margin:14px 0;padding:14px 16px;background:#1c1c1c;border-left:4px solid #e8a020">
+          <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e8a020;margin-bottom:10px">Affordability Tiers — Based on Greeley AMI ($68,650/yr) · March 2026 30-Year Mortgage Estimates</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+            <div style="background:#1e8449;padding:10px 12px;border-radius:2px">
+              <div style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px">Low-Income / Workforce</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#fff">Under $225K</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.7);margin-top:3px">Below 80% of Greeley AMI</div>
+            </div>
+            <div style="background:#0a5c8a;padding:10px 12px;border-radius:2px">
+              <div style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px">Middle-Income</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#fff">$225K–$350K</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.7);margin-top:3px">80%–120% of Greeley AMI</div>
+            </div>
+            <div style="background:#555;padding:10px 12px;border-radius:2px">
+              <div style="font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px">Market-Rate</div>
+              <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#fff">Above $350K</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.7);margin-top:3px">Above 120% of Greeley AMI</div>
+            </div>
+          </div>
+          <div style="font-size:9px;color:rgba(255,255,255,0.3);margin-top:8px;font-style:italic">Price ranges are guidance based on March 2026 30-year mortgage estimates. All binding commitments must reference AMI percentage thresholds, not fixed dollar amounts, to remain accurate as market conditions change.</div>
+        </div>
+
+        <ul class="ex-demand-list">
+          <li><strong>50% of all new housing within a 10-mile radius of Cascadia</strong> must be set aside for low- and moderate-income residents — binding, deed-restricted, and written into the development agreement. No voluntary pledges.</li>
+          <li>New housing must reflect the income levels of <em>actual Greeley residents</em>. All affordability definitions tied to Greeley AMI ($68,650) — not national or metro-wide figures.</li>
+          <li><strong>Priority access for existing Greeley residents</strong>, including low-income households currently on housing waiting lists. First right of placement before any units are offered to outside buyers or renters.</li>
+          <li><strong>Eviction prevention grants</strong> established for residents at risk of displacement due to Cascadia-driven rent and property value increases — specific dollar amounts must be quantified and committed in writing.</li>
+          <li><strong>Property tax relief program</strong> for longtime Greeley homeowners facing property tax increases caused by Cascadia's impact on surrounding land values — dollar caps and eligibility thresholds to be publicly defined.</li>
+        </ul>
+
+        <div style="margin:14px 0;padding:12px 16px;background:#f0f8ff;border-left:4px solid #0a5c8a;font-size:11px;color:#1c1c1c;line-height:1.6">
+          <strong style="display:block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#0a5c8a;margin-bottom:6px">Transit — Bus Hub on Arena Land</strong>
+          The City of Greeley owns land surrounding the arena. That land must be put to public use. We are demanding a full bus hub on that government-owned property — not a study, not a feasibility analysis, not a promise to "explore" transit. A committed, funded, operational bus hub with the following components:
+          <ul class="ex-demand-list" style="margin-top:10px">
+            <li>Bus hub constructed on government-owned arena-adjacent land</li>
+            <li>New routes connecting the Cascadia/Catalyst site to neighboring cities — funded in coordination with those municipalities</li>
+            <li>Dedicated bus lanes near high-traffic Cascadia corridors</li>
+            <li>Fleet upgrades — updated, accessible buses on all new routes</li>
+            <li>Expanded stops throughout Greeley, with priority in low-income neighborhoods closest to the development</li>
+          </ul>
+        </div>
+
+        <div style="margin:14px 0;padding:12px 16px;background:#fff8f0;border-left:4px solid #c0392b;font-size:11px;color:#1c1c1c;line-height:1.6">
+          <strong style="display:block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#c0392b;margin-bottom:6px">Homeless Services &amp; Creative Funding</strong>
+          The Cascadia project will generate significant new economic activity in Greeley. A portion of that activity must be directed toward the community members most at risk of being left behind. We are demanding:
+          <ul class="ex-demand-list" style="margin-top:10px">
+            <li>Direct investment in Greeley homeless shelters — a specific dollar commitment, not a general pledge</li>
+            <li>Exploration of a dedicated sales tax mechanism to fund ongoing homeless services — with public vote and full transparency on fund usage</li>
+            <li>Developer contribution to a community stabilization fund as a condition of project approval</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ACCOUNTABILITY -->
+    <div class="ex-section">
+      <div class="ex-section-hdr">
+        <div class="ex-section-num">★</div>
+        <div>
+          <div class="ex-section-title">Accountability &amp; Reporting Requirements</div>
+          <div class="ex-section-sub">Annual Audits · Independent Verification · Public Data</div>
+        </div>
+      </div>
+      <div class="ex-section-body">
+        Commitments without enforcement are promises without consequences. Every demand on this scorecard must be backed by binding reporting requirements.
+        <ul class="ex-demand-list">
+          <li>Annual public reporting on all project outcomes</li>
+          <li>Independent audits of all development commitments</li>
+          <li>Ongoing oversight by the Citizens Oversight Council</li>
+          <li>Public access to all performance data related to the project</li>
+          <li>A temporary pause on major development approvals until public discussions have been completed</li>
+          <li>All negotiation sessions involving public funds recorded and publicly released within <strong>24 hours</strong></li>
+          <li>Written public response from each City Council member within <strong>10 business days</strong> on whether they support this transparent process</li>
+        </ul>
+        <div class="ex-quote">
+          <div class="ex-quote-text">"Public disclosure of any elected official declining participation so residents may remain informed about their representatives' positions."</div>
+          <div class="ex-quote-attr">— Citizen Demand Letter · March 15, 2026</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOIN BOX (duplicated on explainer page) -->
+    <div class="join-box">
+      <div class="join-inner">
+        <div class="join-hdr-col">
+          <div class="join-eyebrow">This Is Your Town</div>
+          <div class="join-title">Join the <em>Coalition.</em></div>
+          <div class="join-tagline">"No taxation without representation."</div>
+        </div>
+        <div class="join-content">
+          <div class="join-pitch">This scorecard updates every time a council member speaks, votes, stays silent — or makes a promise and breaks it. <strong>You help make that happen.</strong> Our coalition tracks every meeting, files public records requests, shows up at City Hall, and posts the receipts — free, for everyone. The Cascadia Data Center project affects your water, your housing, your taxes, and your neighbors' jobs. <strong>This is your town. Stay in the fight.</strong></div>
+          <div class="join-steps">
+            <div class="join-step"><div class="step-n">1</div><div class="step-t"><span class="ptag gold">Skool</span><strong>Organizing HQ.</strong> Search <strong>"Greeley Accountability"</strong> on Skool.com</div></div>
+            <div class="join-step"><div class="step-n">2</div><div class="step-t"><span class="ptag red">Meetup</span><strong>Show up in person.</strong> Search <strong>"Greeley Civic Accountability"</strong></div></div>
+            <div class="join-step"><div class="step-n">3</div><div class="step-t"><span class="ptag blue">Facebook</span><strong>Daily updates.</strong> Search <strong>"Greeley Accountability Coalition"</strong></div></div>
+            <div class="join-step"><div class="step-n">4</div><div class="step-t"><strong>Tell ten people.</strong> Pass this page along.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /explainer -->
+</div><!-- /page-explainer -->
+
 <div class="footer">
   <div class="footer-inner">
     <div>
@@ -292,52 +545,47 @@ tr:last-child td{border-bottom:none}
   </div>
 </div>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
   <div class="modal" id="modalBox"></div>
 </div>
 
-<!-- ═══════════════════════════════════════════════════════════════
-     FIREBASE SDK  (loaded from Google's CDN — no npm needed)
-═══════════════════════════════════════════════════════════════ -->
-<script type="module">
-import { initializeApp }           from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, set, get, onValue, update }
-                                   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
-
-/* ═══════════════════════════════════════════════════════════════
-   ▼▼▼  PASTE YOUR FIREBASE CONFIG HERE  ▼▼▼
-   (You will get these values from the Firebase console —
-    step-by-step instructions are below the file)
-═══════════════════════════════════════════════════════════════ */
+<script>
+/* ── FIREBASE CONFIG ──────────────────────────────────
+   Paste your Firebase config values below.
+   Until configured, the scorecard renders fully with
+   blank scores (read-only mode, no syncing).
+──────────────────────────────────────────────────── */
 const firebaseConfig = {
-    apiKey: "AIzaSyBHhs6qQMYH-vvXDCd9vu9-x1IaBWxqXV0",
-    authDomain: "grelley-council-scorecard.firebaseapp.com",
-    databaseURL: "https://grelley-council-scorecard-default-rtdb.firebaseio.com",
-    projectId: "grelley-council-scorecard",
-    storageBucket: "grelley-council-scorecard.firebasestorage.app",
-    messagingSenderId: "407414611999",
-    appId: "1:407414611999:web:59017d4ab0263d9b6b752a",
-    measurementId: "G-RTHG64ZQB2"
-  };
-/* ▲▲▲  END OF CONFIG SECTION  ▲▲▲ */
+  apiKey:            "PASTE_YOUR_apiKey_HERE",
+  authDomain:        "PASTE_YOUR_authDomain_HERE",
+  databaseURL:       "PASTE_YOUR_databaseURL_HERE",
+  projectId:         "PASTE_YOUR_projectId_HERE",
+  storageBucket:     "PASTE_YOUR_storageBucket_HERE",
+  messagingSenderId: "PASTE_YOUR_messagingSenderId_HERE",
+  appId:             "PASTE_YOUR_appId_HERE"
+};
+/* ▲▲▲  END OF CONFIG  ▲▲▲ */
 
-const app = initializeApp(firebaseConfig);
-const db  = getDatabase(app);
+/* Detect whether config has been filled in */
+const FIREBASE_CONFIGURED = !Object.values(firebaseConfig).some(v => v.startsWith("PASTE_"));
 
-/* ── ADMIN PASSWORDS ────────────────────────────────────────────
-   To add/remove admins: edit this list, save, re-upload.
-─────────────────────────────────────────────────────────────── */
+let _db = null, _ref = null, _set = null, _onValue = null, _update = null;
+
+/* ── ADMIN PASSWORDS ──────────────────────────────────
+   PASSWORD RESET: If you lose access, edit this list,
+   change the pw value, save the file, and re-upload
+   to Netlify. The new password takes effect immediately.
+   Recovery contact email: UPDATE_THIS_EMAIL@yourdomain.com
+──────────────────────────────────────────────────── */
 const ADMINS = [
-  { name: "Eric",    pw: "greeley2025" },
-  { name: "Admin 2", pw: "changeme2"  },
-  { name: "Admin 3", pw: "changeme3"  },
+  { name: "Eric",    pw: "@ShakeTheP1ll@rs" },
+  { name: "Admin 2", pw: "changeme2"        },
+  { name: "Admin 3", pw: "changeme3"        },
 ];
+/* ── END ADMIN PASSWORDS ── */
 
-let currentAdmin = null;
-let isAdmin      = false;
-let scores       = {};
-let modalCtx     = null, modalSel = null;
+let currentAdmin = null, isAdmin = false;
+let scores = {}, modalCtx = null, modalSel = null;
 
 const OFFICIALS = [
   {id:"mayor", name:"Dale Hall",        role:"Mayor"},
@@ -349,225 +597,208 @@ const OFFICIALS = [
   {id:"al",    name:"Ryan Roth",        role:"At-Large"},
 ];
 
+/* ── CONSOLIDATED DEMANDS (5 — oversight merged into one) ── */
 const DEMANDS = [
-  {id:"accept", num:1, title:"Council Commitment to Accept DSA-Appointed Oversight Members", short:"Accept Members",
-   desc:"Each council member formally commits — on the record — to recognize and accept the Citizens Oversight Council members handpicked by the DSA, without modification, rejection, or substitution",
-   std:"We need: Named members publicly accepted · No council veto over DSA selections · Commitment made on camera and in writing",
+  {id:"oversight", num:1, title:"Citizens Oversight Council — Acceptance & Recognition", short:"Oversight",
+   desc:"Council commits to formally recognize the Many Hands Action Citizens Oversight Council, accept named members without veto, guarantee regular public meetings, and grant the COC standing authority to review all development agreements",
+   std:"We need: Named members accepted in writing · No council veto · Formal recognition · Regular public meetings guaranteed · COC granted standing review authority",
    criteria:[
-     {id:"a1", label:"Publicly accepts DSA-named oversight members by name"},
-     {id:"a2", label:"Commits in writing — no council veto over selections"},
-     {id:"a3", label:"Statement made on camera at public meeting"},
+     {id:"o1", label:"Publicly accepts all Many Hands Action-named oversight members by name, in writing"},
+     {id:"o2", label:"Formally recognizes COC as a standing body — no council veto over membership"},
+     {id:"o3", label:"Guarantees regular, public COC meetings with full document access"},
+     {id:"o4", label:"Statement of acceptance made on camera at a public council meeting"},
    ]},
-  {id:"oversight", num:2, title:"Citizens Oversight Council", short:"Oversight",
-   desc:"Council members commit to formally recognize and work with the DSA-appointed Citizens Oversight Council as a standing body",
-   std:"We need: Formal recognition in writing · Named oversight members accepted · Regular public meetings guaranteed",
+  {id:"jobs", num:2, title:"Local Jobs — Greeley First", short:"Jobs",
+   desc:"50% local hiring target · Living wages with benefits · Apprenticeship programs · 20% local procurement · Affordable commercial space for small businesses",
+   std:"We need: Binding hiring % in agreement · Wage floors in writing · Apprenticeship program codified · Local procurement targets · Annual public reporting",
    criteria:[
-     {id:"o1", label:"Formal written recognition committed"},
-     {id:"o2", label:"DSA-named oversight members accepted"},
-     {id:"o3", label:"Regular public oversight meetings agreed"},
+     {id:"j1", label:"50% local hiring target committed and codified in agreement"},
+     {id:"j2", label:"Living wage + benefits floor committed for all project jobs"},
+     {id:"j3", label:"Local apprenticeship program established · 20% procurement target set"},
    ]},
-  {id:"housing", num:3, title:"Affordable Housing", short:"Housing",
-   desc:"Binding deed-restricted units · codified in the development agreement — no voluntary pledges",
-   std:"We need: Specific % of units · Income thresholds · Deed restrictions in writing",
+  {id:"liability", num:3, title:"Taxpayer Protection & Fiscal Transparency", short:"Liability",
+   desc:"Full public accounting of all subsidies, tax abatements, and infrastructure costs · All negotiations recorded · No private agreements on public funds",
+   std:"We need: Full cost disclosure · All negotiations on video · All votes on public record · No hidden tax abatements",
    criteria:[
-     {id:"h1", label:"Binding unit % committed"},
-     {id:"h2", label:"Deed restrictions in agreement"},
-     {id:"h3", label:"Statement made on camera"},
+     {id:"l1", label:"Full public disclosure of all subsidies, abatements & infrastructure costs"},
+     {id:"l2", label:"All negotiations involving public funds recorded & released within 24 hrs"},
+     {id:"l3", label:"No private agreements on public funds — all votes on public record"},
    ]},
-  {id:"water", num:4, title:"Water Consumption", short:"Water",
-   desc:"Independent impact study before any further approvals · results posted publicly · developer covers mitigation",
-   std:"We need: Independent study ordered · Hard deadline set · Developer pays — not taxpayers",
+  {id:"water", num:4, title:"Water Stewardship & Environmental Responsibility", short:"Water",
+   desc:"Independent water impact study before any further approvals · Public release of all data · Developer pays all mitigation — not taxpayers",
+   std:"We need: Independent study ordered · Hard deadline set · Developer pays — not taxpayers · Regular public environmental meetings",
    criteria:[
-     {id:"w1", label:"Independent study ordered"},
-     {id:"w2", label:"Hard deadline set"},
-     {id:"w3", label:"Developer pays mitigation costs"},
+     {id:"w1", label:"Independent water impact study ordered — developer funded"},
+     {id:"w2", label:"Full public release of study results and all associated data"},
+     {id:"w3", label:"Developer pays all mitigation & environmental monitoring costs"},
    ]},
-  {id:"liability", num:5, title:"Taxpayer Liability", short:"Liability",
-   desc:"Full public accounting of all subsidies · tax abatements · infrastructure costs · no backroom deals",
-   std:"We need: Full cost disclosure · All negotiations on video · All votes on public record",
+  {id:"housing", num:5, title:"Affordable Housing & Community Stability", short:"Housing",
+   desc:"50% of new housing within 10 miles set aside for low/moderate income · AMI-tied affordability tiers · Priority for Greeley waitlist residents · Bus hub on arena land · Eviction prevention grants · Homeless shelter investment",
+   std:"We need: 50% set-aside binding in agreement · AMI tiers defined ($68,650) · Eviction prevention grants quantified · Bus hub on arena land committed · Homeless shelter funds secured",
    criteria:[
-     {id:"l1", label:"Full cost disclosure committed"},
-     {id:"l2", label:"All negotiations on video"},
-     {id:"l3", label:"No hidden tax abatements"},
-   ]},
-  {id:"jobs", num:6, title:"Local Jobs — Greeley First", short:"Jobs",
-   desc:"Hiring targets for Greeley residents · living wage floors · annual verification · codified in agreement",
-   std:"We need: Hiring % targets · Wage floors in writing · Annual public reporting",
-   criteria:[
-     {id:"j1", label:"Greeley hiring targets set"},
-     {id:"j2", label:"Living wage floors committed"},
-     {id:"j3", label:"Annual verification agreed"},
+     {id:"h1", label:"50% of new housing within 10-mile radius set aside for low/moderate income — binding, deed-restricted, AMI-tied (Greeley AMI: $68,650)"},
+     {id:"h2", label:"AMI affordability tiers committed: low/workforce <$225K · middle 80–120% AMI $225K–$350K · priority for existing waitlist residents"},
+     {id:"h3", label:"Eviction prevention grants established · property tax relief for residents displaced by Cascadia-driven increases — dollar amounts specified"},
+     {id:"h4", label:"Bus hub committed on government-owned arena land · new routes to neighboring cities · bus lanes, updated fleet, expanded stops"},
+     {id:"h5", label:"Dedicated homeless shelter investment committed · creative funding mechanism (e.g. sales tax) established with specific dollar target"},
    ]},
 ];
 
 const STATUS = {
-  committed: {icon:"✓", short:"Committed",           long:"Committed on record",       positive:true},
-  met:       {icon:"★", short:"Met Commitment",      long:"Commitment fully met",      positive:true},
-  refused:   {icon:"✗", short:"Refused",              long:"Refused / opposed",         positive:false},
-  failed:    {icon:"✗", short:"Failed Constituency", long:"Failed their constituency", positive:false},
-  noresp:    {icon:"?", short:"No Response",          long:"No response / stalling",    positive:false},
-  blank:     {icon:"—", short:"Not Tracked",          long:"Not tracked yet",           positive:null},
+  committed:{icon:"✓",short:"Committed",long:"Committed on record",positive:true},
+  met:      {icon:"★",short:"Met Commitment",long:"Commitment fully met",positive:true},
+  refused:  {icon:"✗",short:"Refused",long:"Refused / opposed",positive:false},
+  failed:   {icon:"✗",short:"Failed Constituency",long:"Failed their constituency",positive:false},
+  noresp:   {icon:"?",short:"No Response",long:"No response / stalling",positive:false},
+  blank:    {icon:"—",short:"Not Tracked",long:"Not tracked yet",positive:null},
 };
 
-/* ── OVERSIGHT MEMBERS ── */
 const MAX_OVERSIGHT = 9;
 let oversightMembers = Array(MAX_OVERSIGHT).fill("");
 
-/* ═══════════════════════════════════════════════════════════════
-   FIREBASE: real-time listener — scores + oversight update live
-   on every device the instant an admin saves a change
-═══════════════════════════════════════════════════════════════ */
-function initFirebase(){
+/* ── FIREBASE ── */
+function seedBlankScores(){
+  DEMANDS.forEach(d=>d.criteria.forEach(c=>OFFICIALS.forEach(o=>{
+    const k=fbKey(d.id,c.id,o.id);
+    if(!scores[k]) scores[k]="blank";
+  })));
+}
+
+async function initFirebase(){
   const fbStat = document.getElementById("fbStatus");
+  if(!FIREBASE_CONFIGURED){
+    fbStat.textContent="⚠ Config needed"; fbStat.className="fb-status error";
+    return; // already rendered blank scorecard at boot
+  }
+  try {
+    const { initializeApp }  = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+    const { getDatabase, ref, set, onValue, update } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
+    const app = initializeApp(firebaseConfig);
+    _db = getDatabase(app);
+    _ref = ref; _set = set; _onValue = onValue; _update = update;
 
-  // Listen to ALL scorecard data in real time
-  onValue(ref(db, "scorecard"), (snapshot) => {
-    const data = snapshot.val() || {};
-    scores           = data.scores  || {};
-    oversightMembers = data.oversight
-      ? (Array.isArray(data.oversight) ? data.oversight : Object.values(data.oversight))
-      : Array(MAX_OVERSIGHT).fill("");
-    // Pad to MAX_OVERSIGHT
-    while(oversightMembers.length < MAX_OVERSIGHT) oversightMembers.push("");
-
-    // Fill blanks for any missing score keys
-    DEMANDS.forEach(d => d.criteria.forEach(c => OFFICIALS.forEach(o => {
-      const k = fbKey(d.id, c.id, o.id);
-      if(!scores[k]) scores[k] = "blank";
-    })));
-
-    if(data.lastUpdated) stamp(data.lastUpdated);
-
-    fbStat.textContent  = "● Live";
-    fbStat.className    = "fb-status live";
-
-    render();
-    if(isAdmin) renderOversightGrid();
-  }, (err) => {
-    fbStat.textContent = "✗ Offline";
-    fbStat.className   = "fb-status error";
-    console.error("Firebase read error:", err);
-  });
+    _onValue(_ref(_db,"scorecard"),(snapshot)=>{
+      const data = snapshot.val()||{};
+      scores = data.scores||{};
+      oversightMembers = data.oversight
+        ? (Array.isArray(data.oversight)?data.oversight:Object.values(data.oversight))
+        : Array(MAX_OVERSIGHT).fill("");
+      while(oversightMembers.length<MAX_OVERSIGHT) oversightMembers.push("");
+      seedBlankScores();
+      if(data.lastUpdated) stamp(data.lastUpdated);
+      fbStat.textContent="● Live"; fbStat.className="fb-status live";
+      render();
+      if(isAdmin) renderOversightGrid();
+    },(err)=>{
+      fbStat.textContent="✗ Offline"; fbStat.className="fb-status error";
+    });
+  } catch(e) {
+    fbStat.textContent="✗ Firebase error"; fbStat.className="fb-status error";
+    console.error("Firebase init error:", e);
+  }
 }
 
-/* Firebase uses flat key strings safe for its path rules */
-function fbKey(d, c, o){ return `${d}__${c}__${o}`; }
+function fbKey(d,c,o){return `${d}__${c}__${o}`;}
 
-/* Write a single score to Firebase */
-function save(k, v){
-  scores[k] = v;
-  const ts = new Date().toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
-  const updates = {};
-  updates[`scorecard/scores/${k}`]    = v;
-  updates[`scorecard/lastUpdated`]    = ts;
-  update(ref(db), updates);
+function save(k,v){
+  scores[k]=v;
+  const ts=new Date().toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
+  if(_db && _ref && _update){
+    const upd={};
+    upd[`scorecard/scores/${k}`]=v;
+    upd[`scorecard/lastUpdated`]=ts;
+    _update(_ref(_db),upd);
+  }
   stamp(ts);
+  render();
 }
 
-/* Write all oversight member names to Firebase */
 function saveOversightMembers(){
-  // Collect from inline inputs in Demand 1 left column
-  document.querySelectorAll(".oversight-member-inline").forEach(inp => {
-    const idx = parseInt(inp.getAttribute("data-idx"));
-    oversightMembers[idx] = inp.value.trim();
+  document.querySelectorAll(".oversight-member-inline").forEach(inp=>{
+    oversightMembers[parseInt(inp.getAttribute("data-idx"))]=inp.value.trim();
   });
-  // Also collect from panel inputs
-  document.querySelectorAll(".oversight-input").forEach((inp, i) => {
-    if(inp.value.trim()) oversightMembers[i] = inp.value.trim();
+  document.querySelectorAll(".oversight-input").forEach((inp,i)=>{
+    if(inp.value.trim()) oversightMembers[i]=inp.value.trim();
   });
-  set(ref(db, "scorecard/oversight"), oversightMembers);
-  const saved = document.getElementById("oversightSaved");
-  if(saved){ saved.style.display="inline"; setTimeout(()=>saved.style.display="none", 2200); }
+  if(_db && _ref && _set) _set(_ref(_db,"scorecard/oversight"),oversightMembers);
+  const s=document.getElementById("oversightSaved");
+  if(s){s.style.display="inline";setTimeout(()=>s.style.display="none",2200);}
 }
 
 function updateOversightMember(input){
-  const idx = parseInt(input.getAttribute("data-idx"));
-  oversightMembers[idx] = input.value;
+  oversightMembers[parseInt(input.getAttribute("data-idx"))]=input.value;
 }
 
 function renderOversightGrid(){
-  const grid = document.getElementById("oversightGrid");
-  if(!grid) return;
-  grid.innerHTML = "";
-  for(let i = 0; i < MAX_OVERSIGHT; i++){
-    const field = document.createElement("div");
-    field.className = "oversight-field";
-    field.innerHTML = '<div class="oversight-label">Member '+(i+1)+'</div>'
+  const grid=document.getElementById("oversightGrid");
+  if(!grid) return; grid.innerHTML="";
+  for(let i=0;i<MAX_OVERSIGHT;i++){
+    const f=document.createElement("div"); f.className="oversight-field";
+    f.innerHTML='<div class="oversight-label">Member '+(i+1)+'</div>'
       +'<input class="oversight-input" type="text" placeholder="Enter name..." value="'+(oversightMembers[i]||'')+'" />';
-    grid.appendChild(field);
+    grid.appendChild(f);
   }
 }
 
 function stamp(ts){
-  ["lastUpdatedMast","lastUpdFooter"].forEach(id => {
-    const el = document.getElementById(id);
-    if(el) el.textContent = "Last updated: " + ts;
+  ["lastUpdatedMast","lastUpdFooter"].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el) el.textContent="Last updated: "+ts;
   });
 }
 
-/* ── SCORE CALCULATIONS ── */
+/* ── SCORE CALC ── */
 function calcScore(oid){
-  let total=0, positive=0;
-  DEMANDS.forEach(d => d.criteria.forEach(cr => {
-    const v = scores[fbKey(d.id, cr.id, oid)];
-    if(!v || v==="blank") return;
-    total++;
-    if(STATUS[v].positive === true) positive++;
+  let total=0,positive=0;
+  DEMANDS.forEach(d=>d.criteria.forEach(cr=>{
+    const v=scores[fbKey(d.id,cr.id,oid)];
+    if(!v||v==="blank") return;
+    total++; if(STATUS[v].positive===true) positive++;
   }));
-  return { total, positive, pct: total===0 ? null : Math.round((positive/total)*100) };
+  return{total,positive,pct:total===0?null:Math.round((positive/total)*100)};
 }
-
-function demandScore(demand, oid){
-  let t=0, p=0;
-  demand.criteria.forEach(cr => {
-    const v = scores[fbKey(demand.id, cr.id, oid)];
-    if(!v || v==="blank") return;
+function demandScore(demand,oid){
+  let t=0,p=0;
+  demand.criteria.forEach(cr=>{
+    const v=scores[fbKey(demand.id,cr.id,oid)];
+    if(!v||v==="blank") return;
     t++; if(STATUS[v].positive===true) p++;
   });
-  return {t,p};
+  return{t,p};
 }
-
 function demandTally(d){
-  const out = {};
-  OFFICIALS.forEach(o => {
-    let t=0, p=0;
-    d.criteria.forEach(cr => {
-      const v = scores[fbKey(d.id, cr.id, o.id)];
-      if(!v || v==="blank") return;
+  const out={};
+  OFFICIALS.forEach(o=>{
+    let t=0,p=0;
+    d.criteria.forEach(cr=>{
+      const v=scores[fbKey(d.id,cr.id,o.id)];
+      if(!v||v==="blank") return;
       t++; if(STATUS[v].positive===true) p++;
     });
-    out[o.id] = {t,p};
+    out[o.id]={t,p};
   });
   return out;
 }
-
 function grade(pct){
-  if(pct===null) return "X";
-  if(pct>=80) return "A"; if(pct>=60) return "B";
-  if(pct>=40) return "C"; if(pct>=20) return "D";
-  return "F";
+  if(pct===null) return"X";
+  if(pct>=80) return"A"; if(pct>=60) return"B";
+  if(pct>=40) return"C"; if(pct>=20) return"D";
+  return"F";
 }
-
-function gradeColor(g){
-  return {A:"#1e8449",B:"#0a5c8a",C:"#b7800a",D:"#c0392b",F:"#922b21",X:"#bbb"}[g];
-}
-
-function badgeCls(t,p){
-  if(t===0) return "none";
-  const r=p/t;
-  return r>=0.67?"high":r>=0.34?"mid":"low";
-}
+function gradeColor(g){return{A:"#1e8449",B:"#0a5c8a",C:"#b7800a",D:"#c0392b",F:"#922b21",X:"#bbb"}[g];}
+function badgeCls(t,p){if(t===0)return"none";const r=p/t;return r>=0.67?"high":r>=0.34?"mid":"low";}
 
 /* ── RENDER ── */
 function render(){
-  const el = document.getElementById("mainContent");
-  let h = "";
+  const el=document.getElementById("mainContent");
+  let h="";
 
-  DEMANDS.forEach(d => {
-    const tally = demandTally(d);
-    h += `<div class="demand-block">
+  DEMANDS.forEach(d=>{
+    const tally=demandTally(d);
+    const isOv=(d.id==="oversight");
+    h+=`<div class="demand-block">
 <div class="demand-hdr">
-  <div class="${(d.id==='oversight'||d.id==='accept')?'d-num oversight':'d-num'}">${d.num}</div>
+  <div class="${isOv?'d-num oversight':'d-num'}">${d.num}</div>
   <div class="d-text">
     <div class="d-title">${d.title}</div>
     <div class="d-desc">${d.desc}</div>
@@ -581,120 +812,75 @@ function render(){
 </tr></thead>
 <tbody>`;
 
-    d.criteria.forEach((cr, crIdx) => {
-      let memberHtml = "";
-
-      // DEMAND 1 (accept): admin sees inline inputs; public sees saved names
-      if(d.id === "accept"){
-        const startIdx = crIdx * 3;
-        const members  = oversightMembers.slice(startIdx, startIdx+3).filter(m=>m);
+    d.criteria.forEach((cr,crIdx)=>{
+      let mHtml="";
+      if(isOv){
+        const si=crIdx*3;
+        const members=oversightMembers.slice(si,si+3).filter(m=>m);
         if(isAdmin){
-          memberHtml = '<div style="margin-top:6px;display:flex;flex-direction:column;gap:3px">';
-          for(let mi=0; mi<3; mi++){
-            const gi  = startIdx + mi;
-            const val = (oversightMembers[gi]||"").replace(/"/g,'&quot;');
-            memberHtml += `<input class="oversight-member-inline" data-idx="${gi}" type="text"
-              placeholder="Member name ${gi+1}…" value="${val}"
-              oninput="updateOversightMember(this)"
-              style="font-family:'Libre Franklin',sans-serif;font-size:10px;padding:3px 6px;
-                     border:1px solid #0a5c8a;background:#f0f8ff;color:#1c1c1c;width:100%"/>`;
+          mHtml='<div style="margin-top:6px;display:flex;flex-direction:column;gap:3px">';
+          for(let mi=0;mi<3;mi++){
+            const gi=si+mi,val=(oversightMembers[gi]||"").replace(/"/g,'&quot;');
+            mHtml+=`<input class="oversight-member-inline" data-idx="${gi}" type="text" placeholder="Member ${gi+1}…" value="${val}" oninput="updateOversightMember(this)" style="font-family:'Libre Franklin',sans-serif;font-size:10px;padding:3px 6px;border:1px solid #0a5c8a;background:#f0f8ff;color:#1c1c1c;width:100%"/>`;
           }
-          memberHtml += `<button onclick="saveOversightMembers()"
-            style="font-family:'Libre Franklin',sans-serif;font-size:8px;font-weight:700;
-                   letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border:none;
-                   background:#0a5c8a;color:#fff;cursor:pointer;margin-top:2px;align-self:flex-start">
-            Save ✓</button></div>`;
-        } else if(members.length > 0){
-          memberHtml = '<div style="margin-top:4px">'
-            + members.map(m=>`<div class="oversight-member-name">${m}</div>`).join("")
-            + '</div>';
+          mHtml+=`<button onclick="saveOversightMembers()" style="font-family:'Libre Franklin',sans-serif;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border:none;background:#0a5c8a;color:#fff;cursor:pointer;margin-top:2px;align-self:flex-start">Save ✓</button></div>`;
+        } else if(members.length>0){
+          mHtml='<div style="margin-top:4px">'+members.map(m=>`<div class="oversight-member-name">${m}</div>`).join("")+'</div>';
         }
       }
-
-      // DEMAND 2 (oversight): shows saved names for everyone
-      if(d.id === "oversight"){
-        const startIdx = crIdx * 3;
-        const members  = oversightMembers.slice(startIdx, startIdx+3).filter(m=>m);
-        if(members.length > 0){
-          memberHtml = '<div style="margin-top:4px">'
-            + members.map(m=>`<div class="oversight-member-name">${m}</div>`).join("")
-            + '</div>';
-        } else if(isAdmin){
-          memberHtml = '<div style="font-size:8px;color:#bbb;font-style:italic;margin-top:3px">Enter member names in Demand 1 ↑</div>';
-        }
-      }
-
-      h += '<tr><td class="crit-td">' + cr.label + memberHtml + '</td>';
-      OFFICIALS.forEach(o => {
-        const k   = fbKey(d.id, cr.id, o.id);
-        const v   = scores[k] || "blank";
-        const cls = isAdmin ? "spip clickable" : "spip";
-        const oc  = isAdmin
-          ? `onclick="openModal('${d.id}','${cr.id}','${o.id}','${k}','${v}')"`
-          : "";
-        h += `<td class="sc-td"><div class="${cls} ${v}" ${oc} title="${STATUS[v].long}">${STATUS[v].icon}</div></td>`;
+      h+='<tr><td class="crit-td">'+cr.label+mHtml+'</td>';
+      OFFICIALS.forEach(o=>{
+        const k=fbKey(d.id,cr.id,o.id),v=scores[k]||"blank";
+        const cls=isAdmin?"spip clickable":"spip";
+        const oc=isAdmin?`onclick="openModal('${d.id}','${cr.id}','${o.id}','${k}','${v}')"`:"";
+        h+=`<td class="sc-td"><div class="${cls} ${v}" ${oc} title="${STATUS[v].long}">${STATUS[v].icon}</div></td>`;
       });
-      h += '</tr>';
+      h+='</tr>';
     });
 
-    h += `</tbody>
+    h+=`</tbody>
 <tfoot><tr class="total-row">
   <td class="total-label">Score</td>
-  ${OFFICIALS.map(o=>{
-    const {t,p}=tally[o.id];
-    if(t===0) return `<td class="sc-td"><span class="total-badge none">—</span></td>`;
-    return `<td class="sc-td"><span class="total-badge ${badgeCls(t,p)}">${p}/${t}</span></td>`;
-  }).join("")}
-</tr></tfoot>
-</table></div>
-</div>`;
+  ${OFFICIALS.map(o=>{const{t,p}=tally[o.id];if(t===0)return`<td class="sc-td"><span class="total-badge none">—</span></td>`;return`<td class="sc-td"><span class="total-badge ${badgeCls(t,p)}">${p}/${t}</span></td>`;}).join("")}
+</tr></tfoot></table></div></div>`;
   });
 
   /* OVERALL GRADE */
-  h += `<div class="overall-section">
+  h+=`<div class="overall-section">
 <div class="overall-hdr">
   <div class="overall-hdr-title">Overall Accountability Grade</div>
-  <div class="overall-hdr-sub">All 6 demands · 18 criteria · Live · Updates with every change above</div>
+  <div class="overall-hdr-sub">All 5 demands · 16 criteria · Live · Updates with every change above</div>
 </div>
 <div class="overall-grid">`;
 
-  OFFICIALS.forEach(o => {
-    const sc    = calcScore(o.id);
-    const g     = grade(sc.pct);
-    const pctStr= sc.pct===null?"No data yet":sc.pct+"%";
-    const subStr= sc.pct===null?"": `${sc.positive} of ${sc.total} tracked`;
-    const barW  = sc.pct||0;
-    const gCls  = g==="X"?"X":g;
-
-    h += `<div class="oc">
+  OFFICIALS.forEach(o=>{
+    const sc=calcScore(o.id),g=grade(sc.pct),gCls=g==="X"?"X":g;
+    const pctStr=sc.pct===null?"No data yet":sc.pct+"%";
+    const subStr=sc.pct===null?"":`${sc.positive} of ${sc.total} tracked`;
+    h+=`<div class="oc">
   <div class="oc-name">${o.name}</div>
   <div class="oc-role">${o.role}</div>
   <div class="oc-grade ${gCls}">${g==="X"?"?":g}</div>
   <div class="oc-pct ${gCls}">${pctStr}</div>
   <div class="oc-sub">${subStr}</div>
-  <div class="oc-bar-bg"><div class="oc-bar-fill ${gCls}" style="width:${barW}%"></div></div>
+  <div class="oc-bar-bg"><div class="oc-bar-fill ${gCls}" style="width:${sc.pct||0}%"></div></div>
   <div class="oc-demands">`;
-
-    DEMANDS.forEach(d => {
-      const ds     = demandScore(d, o.id);
-      const dLabel = ds.t===0?"—":`${ds.p}/${ds.t}`;
-      const dCls   = ds.t===0?"oc-dl-blank":ds.p===ds.t?"oc-dl-good":ds.p>0?"oc-dl-mid":"oc-dl-bad";
-      h += `<div class="oc-demand-row">
-    <div class="oc-demand-label">${d.short.substring(0,3).toUpperCase()}</div>
-    <div class="oc-dots">`;
-      d.criteria.forEach(cr => {
-        const v = scores[fbKey(d.id,cr.id,o.id)]||"blank";
-        h += `<div class="mini-dot ${v}" title="${d.short}: ${STATUS[v].short}"></div>`;
+    DEMANDS.forEach(d=>{
+      const ds=demandScore(d,o.id);
+      const dLabel=ds.t===0?"—":`${ds.p}/${ds.t}`;
+      const dCls=ds.t===0?"oc-dl-blank":ds.p===ds.t?"oc-dl-good":ds.p>0?"oc-dl-mid":"oc-dl-bad";
+      h+=`<div class="oc-demand-row"><div class="oc-demand-label">${d.short.substring(0,3).toUpperCase()}</div><div class="oc-dots">`;
+      d.criteria.forEach(cr=>{
+        const v=scores[fbKey(d.id,cr.id,o.id)]||"blank";
+        h+=`<div class="mini-dot ${v}" title="${d.short}: ${STATUS[v].short}"></div>`;
       });
-      h += `</div><div class="oc-dl ${dCls}">${dLabel}</div></div>`;
+      h+=`</div><div class="oc-dl ${dCls}">${dLabel}</div></div>`;
     });
-    h += `</div></div>`;
+    h+=`</div></div>`;
   });
 
-  h += `</div></div>`;
-
-  /* JOIN BOX */
-  h += `<div class="join-box">
+  h+=`</div></div>
+<div class="join-box">
 <div class="join-inner">
   <div class="join-hdr-col">
     <div class="join-eyebrow">This Is Your Town</div>
@@ -704,29 +890,27 @@ function render(){
   <div class="join-content">
     <div class="join-pitch">This scorecard updates every time a council member speaks, votes, stays silent — or makes a promise and breaks it. <strong>You help make that happen.</strong> Our coalition tracks every meeting, files public records requests, shows up at City Hall, and posts the receipts — free, for everyone. The Cascadia Data Center project affects your water, your housing, your taxes, and your neighbors' jobs. <strong>This is your town. Stay in the fight.</strong></div>
     <div class="join-steps">
-      <div class="join-step"><div class="step-n">1</div><div class="step-t"><span class="ptag gold">Skool</span><strong>Organizing HQ.</strong> Real-time alerts &amp; accountability clips. Search <strong>"Greeley Accountability"</strong> on Skool.com</div></div>
-      <div class="join-step"><div class="step-n">2</div><div class="step-t"><span class="ptag red">Meetup</span><strong>Show up in person.</strong> Monthly briefings &amp; council-meeting prep. Search <strong>"Greeley Civic Accountability"</strong></div></div>
-      <div class="join-step"><div class="step-n">3</div><div class="step-t"><span class="ptag blue">Facebook</span><strong>Daily updates.</strong> Council clips, scorecard posts, neighbor stories. Search <strong>"Greeley Accountability Coalition"</strong></div></div>
-      <div class="join-step"><div class="step-n">4</div><div class="step-t"><strong>Tell ten people.</strong> Not a group text — ten real conversations. Pass this scorecard along.</div></div>
+      <div class="join-step"><div class="step-n">1</div><div class="step-t"><span class="ptag gold">Skool</span><strong>Organizing HQ.</strong> Search <strong>"Greeley Accountability"</strong> on Skool.com</div></div>
+      <div class="join-step"><div class="step-n">2</div><div class="step-t"><span class="ptag red">Meetup</span><strong>Show up in person.</strong> Search <strong>"Greeley Civic Accountability"</strong></div></div>
+      <div class="join-step"><div class="step-n">3</div><div class="step-t"><span class="ptag blue">Facebook</span><strong>Daily updates.</strong> Search <strong>"Greeley Accountability Coalition"</strong></div></div>
+      <div class="join-step"><div class="step-n">4</div><div class="step-t"><strong>Tell ten people.</strong> Not a group text — ten real conversations.</div></div>
     </div>
   </div>
 </div>
 </div>`;
 
-  el.innerHTML = h;
+  el.innerHTML=h;
 }
 
 /* ── MODAL ── */
-function openModal(did, cid, oid, k, current){
+function openModal(did,cid,oid,k,current){
   modalCtx={k}; modalSel=current;
-  const d  = DEMANDS.find(x=>x.id===did);
-  const cr = d.criteria.find(x=>x.id===cid);
-  const o  = OFFICIALS.find(x=>x.id===oid);
-  const opt = (s) => `<div class="modal-opt ${s===current?"selected":""}" onclick="selOpt(this,'${s}')">
+  const d=DEMANDS.find(x=>x.id===did),cr=d.criteria.find(x=>x.id===cid),o=OFFICIALS.find(x=>x.id===oid);
+  const opt=(s)=>`<div class="modal-opt ${s===current?"selected":""}" onclick="selOpt(this,'${s}')">
   <div class="opt-icon ${s}">${STATUS[s].icon}</div>
   <div><div class="opt-short">${STATUS[s].short}</div><div class="opt-long">${STATUS[s].long}</div></div>
 </div>`;
-  document.getElementById("modalBox").innerHTML = `
+  document.getElementById("modalBox").innerHTML=`
 <div class="modal-hdr"><h3>${o.name}</h3><p>${d.title} · ${cr.label}</p></div>
 <div class="modal-body">
   <div class="modal-sec pos">✓ Positive — promise made or kept</div>
@@ -742,75 +926,67 @@ function openModal(did, cid, oid, k, current){
 </div>`;
   document.getElementById("modalOverlay").style.display="flex";
 }
+function selOpt(el,val){document.querySelectorAll(".modal-opt").forEach(e=>e.classList.remove("selected"));el.classList.add("selected");modalSel=val;}
+function commitModal(){if(modalCtx&&modalSel){save(modalCtx.k,modalSel);closeModal();}}
+function closeModal(){document.getElementById("modalOverlay").style.display="none";modalCtx=null;}
+function handleOverlayClick(e){if(e.target===document.getElementById("modalOverlay"))closeModal();}
 
-function selOpt(el,val){
-  document.querySelectorAll(".modal-opt").forEach(e=>e.classList.remove("selected"));
-  el.classList.add("selected"); modalSel=val;
-}
-
-function commitModal(){
-  if(modalCtx && modalSel){ save(modalCtx.k, modalSel); closeModal(); }
-}
-
-function closeModal(){
-  document.getElementById("modalOverlay").style.display="none";
-  modalCtx=null;
-}
-
-function handleOverlayClick(e){
-  if(e.target===document.getElementById("modalOverlay")) closeModal();
-}
-
+/* ── AUTH ── */
 function toggleLogin(){
   const p=document.getElementById("loginPanel");
   p.style.display=(p.style.display==="none"||!p.style.display)?"block":"none";
 }
-
+function toggleReset(){
+  const r=document.getElementById("resetSection");
+  r.style.display=r.style.display==="none"||!r.style.display?"block":"none";
+  document.getElementById("adminList").textContent=ADMINS.map(a=>a.name).join(", ");
+}
 function doLogin(){
   const entered=document.getElementById("pwInput").value;
   const match=ADMINS.find(a=>a.pw===entered);
   if(match){
     isAdmin=true; currentAdmin=match.name;
-    document.getElementById("loginPanel").style.display   ="none";
-    document.getElementById("adminBtn").style.display     ="none";
-    document.getElementById("adminNotice").style.display  ="inline-block";
-    document.getElementById("adminNotice").textContent    ="● Admin: "+match.name;
-    document.getElementById("logoutBtn").style.display    ="inline-block";
+    document.getElementById("loginPanel").style.display="none";
+    document.getElementById("adminBtn").style.display="none";
+    document.getElementById("adminNotice").style.display="inline-block";
+    document.getElementById("adminNotice").textContent="● Admin: "+match.name;
+    document.getElementById("logoutBtn").style.display="inline-block";
     document.getElementById("oversightPanel").style.display="block";
-    document.getElementById("loginErr").textContent       ="";
-    document.getElementById("pwInput").value              ="";
-    renderOversightGrid();
-    render();
+    document.getElementById("loginErr").textContent="";
+    document.getElementById("pwInput").value="";
+    renderOversightGrid(); render();
   } else {
     document.getElementById("loginErr").textContent="Incorrect password.";
   }
 }
-
 function doLogout(){
   isAdmin=false; currentAdmin=null;
-  document.getElementById("adminBtn").style.display      ="inline-block";
-  document.getElementById("adminNotice").style.display   ="none";
-  document.getElementById("logoutBtn").style.display     ="none";
+  document.getElementById("adminBtn").style.display="inline-block";
+  document.getElementById("adminNotice").style.display="none";
+  document.getElementById("logoutBtn").style.display="none";
   document.getElementById("oversightPanel").style.display="none";
   render();
 }
 
-/* ── Expose functions that are called from inline HTML handlers ── */
-window.toggleLogin         = toggleLogin;
-window.doLogin             = doLogin;
-window.doLogout            = doLogout;
-window.openModal           = openModal;
-window.selOpt              = selOpt;
-window.commitModal         = commitModal;
-window.closeModal          = closeModal;
-window.handleOverlayClick  = handleOverlayClick;
-window.saveOversightMembers= saveOversightMembers;
-window.updateOversightMember=updateOversightMember;
+/* ── PAGE NAVIGATION ── */
+function showPage(id,tab){
+  document.querySelectorAll(".page-section").forEach(s=>s.classList.remove("active"));
+  document.querySelectorAll(".nav-tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("page-"+id).classList.add("active");
+  tab.classList.add("active");
+}
+
+/* ── EXPOSE TO HTML ── */
+window.toggleLogin=toggleLogin; window.doLogin=doLogin; window.doLogout=doLogout;
+window.openModal=openModal; window.selOpt=selOpt; window.commitModal=commitModal;
+window.closeModal=closeModal; window.handleOverlayClick=handleOverlayClick;
+window.saveOversightMembers=saveOversightMembers; window.updateOversightMember=updateOversightMember;
+window.showPage=showPage; window.toggleReset=toggleReset;
 
 /* ── BOOT ── */
-render();          // render blank shell immediately while Firebase connects
-initFirebase();    // then connect and fill with live data
-
+seedBlankScores();   // populate all cells as blank immediately
+render();            // draw the full scorecard right away
+initFirebase();      // then connect Firebase and replace with real data
 </script>
 </body>
 </html>
