@@ -3,55 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Greeley Council Transparency & Accountability Scorecard</title>
+<title>The Greeley City Government Accountability Scorecard</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Libre+Franklin:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{font-family:'Libre Franklin',sans-serif;font-size:14px;background:#f0ebe0;color:#1c1c1c}
+html{font-family:'Libre Franklin',sans-serif;font-size:17px;background:#f0ebe0;color:#1c1c1c}
 body{min-height:100vh;background:#f0ebe0}
-.masthead{background:#1c1c1c;border-bottom:4px solid #c0392b}
-.masthead-inner{max-width:1140px;margin:0 auto;padding:20px 24px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.mast-kicker{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#c0392b;margin-bottom:5px}
+.masthead{background:#1c1c1c;border-bottom:4px solid #1E4D2B}
+.masthead-inner{max-width:1140px;margin:0 auto;padding:20px 24px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;text-align:center}
+.mast-kicker{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#C8A951;margin-bottom:5px}
 .mast-title{font-family:'Playfair Display',serif;font-size:clamp(18px,2.8vw,34px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-0.5px}
-.mast-title em{color:#c0392b;font-style:normal}
-.mast-sub{font-size:9px;font-weight:300;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:4px}
-.mast-right{text-align:right;flex-shrink:0}
-.mast-date{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.32);margin-bottom:4px}
-.mast-tagline{font-size:9px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#c0392b}
-.explain-bar{background:#e8e2d6;border-bottom:1px solid #d0c8bb;padding:8px 24px}
-.explain-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.explain-text{font-size:11px;color:#555;flex:1;min-width:200px;line-height:1.5}
+.mast-title em{color:#C8A951;font-style:normal}
+.mast-sub{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-top:4px}
+.mast-right{text-align:center;flex-shrink:0}
+.mast-date{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.80);margin-bottom:4px}
+.mast-tagline{font-size:13px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C8A951;text-shadow:0 0 8px rgba(200,169,81,0.9),0 0 20px rgba(200,169,81,0.6),0 0 40px rgba(200,169,81,0.3)}
+.explain-bar{background:#e8e2d6;border-bottom:2px solid #1E4D2B;padding:12px 24px}
+.explain-inner{max-width:1140px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.explain-text{font-size:14px;color:#1c1c1c;line-height:1.5;text-align:center;max-width:900px}
 .explain-text strong{color:#1c1c1c;font-weight:700}
-.legend{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0;align-items:center}
-.legend-label{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#999}
-.leg{display:flex;align-items:center;gap:4px;font-size:9px;font-weight:600;color:#555;white-space:nowrap}
+.legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:center}
+.legend-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#333}
+.leg{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:600;color:#1c1c1c;white-space:nowrap}
 .pip{width:13px;height:13px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:7px;font-weight:800;flex-shrink:0}
-.pip.committed{background:#1e8449;color:#fff}.pip.met{background:#0a5c8a;color:#fff}.pip.refused{background:#c0392b;color:#fff}
-.pip.failed{background:#6b0000;color:#fff}.pip.noresp{background:#e8a020;color:#fff}.pip.blank{background:#bbb;color:#666}
+.pip.committed{background:#1E4D2B;color:#fff}.pip.met{background:#0a5c8a;color:#fff}.pip.refused{background:#c0392b;color:#fff}
+.pip.failed{background:#6b0000;color:#fff}.pip.noresp{background:#C8A951;color:#1c1c1c}.pip.blank{background:#888;color:#fff}
 .admin-bar{background:#1c1c1c;padding:6px 24px}
 .admin-bar-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:flex-end;gap:10px}
-.admin-notice{font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#1e8449;background:rgba(30,132,73,0.15);padding:3px 9px;border:1px solid rgba(30,132,73,0.3)}
-.btn{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 13px;cursor:pointer;border:none;transition:background 0.15s}
-.btn-admin{background:#c0392b;color:#fff}.btn-admin:hover{background:#922b21}
-.btn-logout{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.15)}
-.btn-logout:hover{background:rgba(255,255,255,0.14)}
-.fb-status{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
-.fb-status.connecting{color:#b7800a;background:rgba(184,128,10,0.12);border:1px solid rgba(184,128,10,0.3)}
-.fb-status.live{color:#1e8449;background:rgba(30,132,73,0.12);border:1px solid rgba(30,132,73,0.3)}
-.fb-status.error{color:#c0392b;background:rgba(192,57,43,0.12);border:1px solid rgba(192,57,43,0.3)}
+.admin-notice{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#fff;background:rgba(30,77,43,0.5);padding:3px 9px;border:1px solid rgba(30,77,43,0.6)}
+.btn{font-family:'Libre Franklin',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:7px 14px;cursor:pointer;border:none;transition:background 0.15s}
+.btn-admin{background:#1E4D2B;color:#fff}.btn-admin:hover{background:#143520}
+.btn-logout{background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.85);border:1px solid rgba(255,255,255,0.3)}
+.btn-logout:hover{background:rgba(255,255,255,0.22)}
+.fb-status{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:2px}
+.fb-status.connecting{color:#7a5200;background:rgba(200,169,81,0.2);border:1px solid rgba(200,169,81,0.5)}
+.fb-status.live{color:#1E4D2B;background:rgba(30,77,43,0.15);border:1px solid rgba(30,77,43,0.4)}
+.fb-status.error{color:#c0392b;background:rgba(192,57,43,0.15);border:1px solid rgba(192,57,43,0.4)}
 /* NAV TABS */
-.page-nav{background:#2a2a2a;border-bottom:2px solid #c0392b;padding:0 24px}
-.page-nav-inner{max-width:1140px;margin:0 auto;display:flex;gap:0}
-.nav-tab{font-family:'Libre Franklin',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:10px 16px;color:rgba(255,255,255,0.45);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;border:none;background:none;transition:color 0.15s}
-.nav-tab:hover{color:rgba(255,255,255,0.75)}
-.nav-tab.active{color:#fff;border-bottom:2px solid #c0392b}
+.page-nav{background:#2a2a2a;border-bottom:2px solid #1E4D2B;padding:0 24px}
+.page-nav-inner{max-width:1140px;margin:0 auto;display:flex;gap:0;justify-content:flex-end}
+.nav-tab{font-family:'Libre Franklin',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:12px 24px;color:rgba(255,255,255,0.75);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;border:none;background:none;transition:color 0.15s;flex:1;text-align:center}
+.nav-tab:hover{color:rgba(255,255,255,0.90)}
+.nav-tab.active{color:#C8A951;border-bottom:2px solid #C8A951}
 /* LOGIN */
-.login-panel{background:#f0ebe0;border-bottom:3px solid #c0392b;padding:18px 24px;display:none}
+.login-panel{background:#f0ebe0;border-bottom:3px solid #1E4D2B;padding:18px 24px;display:none}
 .login-box{max-width:360px;margin:0 auto;background:#fff;border:1px solid #d0c8bb;padding:18px}
 .login-box h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;margin-bottom:4px}
 .login-box p{font-size:11px;color:#777;margin-bottom:12px}
 .login-box input{width:100%;border:1px solid #d0c8bb;padding:7px 9px;font-size:12px;font-family:'Libre Franklin',sans-serif;margin-bottom:9px;background:#f7f5f0;color:#1c1c1c}
-.login-box input:focus{outline:none;border-color:#c0392b}
+.login-box input:focus{outline:none;border-color:#1E4D2B}
 .err-msg{font-size:11px;color:#c0392b;margin-top:4px}
 .login-forgot{font-size:10px;color:#0a5c8a;cursor:pointer;text-decoration:underline;margin-top:4px;display:inline-block}
 .reset-section{margin-top:14px;padding-top:14px;border-top:1px solid #e0d8cc;display:none}
@@ -63,109 +63,109 @@ body{min-height:100vh;background:#f0ebe0}
 /* DEMAND BLOCKS */
 .demand-block{background:#fff;border:1px solid #d0c8bb;margin-bottom:12px;overflow:hidden}
 .demand-hdr{display:flex;align-items:stretch;background:#1c1c1c}
-.d-num{background:#c0392b;color:#fff;font-family:'Playfair Display',serif;font-size:17px;font-weight:900;min-width:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.d-num{background:#1E4D2B;color:#fff;font-family:'Playfair Display',serif;font-size:20px;font-weight:900;min-width:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .d-num.oversight{background:#0a5c8a}
 .d-text{padding:6px 12px;flex:1}
-.d-title{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#fff;line-height:1.1}
-.d-desc{font-size:8.5px;font-weight:300;color:rgba(255,255,255,0.4);margin-top:2px}
-.d-std{font-size:8.5px;font-weight:600;color:#e8a020;margin-top:2px}
+.d-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.1}
+.d-desc{font-size:11px;font-weight:400;color:rgba(255,255,255,0.75);margin-top:2px}
+.d-std{font-size:11px;font-weight:600;color:#C8A951;margin-top:2px}
 .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:11px}
+table{width:100%;border-collapse:collapse;font-size:14px}
 table.demand-tbl{min-width:820px}
-th{padding:5px;font-size:8px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#888;border-bottom:1.5px solid #1c1c1c;background:#f7f3ee;white-space:nowrap;text-align:center}
+th{padding:5px;font-size:11px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#1c1c1c;border-bottom:1.5px solid #1c1c1c;background:#f7f3ee;white-space:nowrap;text-align:center}
 th.crit-th{text-align:left;min-width:128px;background:#eee8de}
 td{padding:4px 5px;border-bottom:1px solid #e8e2d6;vertical-align:middle}
 tr:last-child td{border-bottom:none}
-.crit-td{font-size:10px;color:#555;background:#faf8f5}
-.off-th{font-size:8.5px;line-height:1.2;font-weight:700;color:#1c1c1c;text-transform:none;letter-spacing:0}
-.off-th .role{font-size:7px;font-weight:400;color:#999;display:block;text-transform:uppercase;letter-spacing:0.6px;margin-top:1px}
+.crit-td{font-size:13px;color:#1c1c1c;background:#faf8f5}
+.off-th{font-size:11px;line-height:1.2;font-weight:700;color:#1c1c1c;text-transform:none;letter-spacing:0}
+.off-th .role{font-size:10px;font-weight:400;color:#444;display:block;text-transform:uppercase;letter-spacing:0.6px;margin-top:1px}
 .sc-td{text-align:center;padding:3px 4px}
 .spip{width:24px;height:24px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;cursor:default;transition:transform 0.1s;line-height:1}
 .spip.clickable{cursor:pointer;box-shadow:0 0 0 1px rgba(0,0,0,0.1)}.spip.clickable:hover{transform:scale(1.15)}
-.spip.committed{background:#d5f0e2;color:#1e8449;border:1.5px solid #1e8449}
+.spip.committed{background:#d0ead8;color:#1E4D2B;border:1.5px solid #1E4D2B}
 .spip.met{background:#d0eaf8;color:#0a5c8a;border:1.5px solid #0a5c8a}
 .spip.refused{background:#fde8e8;color:#c0392b;border:1.5px solid #c0392b}
 .spip.failed{background:#f5d0d0;color:#6b0000;border:1.5px solid #6b0000}
-.spip.noresp{background:#fef3d0;color:#b7800a;border:1.5px solid #e8a020}
-.spip.blank{background:#f0ebe0;color:#bbb;border:1.5px dashed #ccc}
+.spip.noresp{background:#fef3d0;color:#7a5200;border:1.5px solid #C8A951}
+.spip.blank{background:#f0ebe0;color:#666;border:1.5px dashed #aaa}
 .total-row td{background:#1c1c1c;border-bottom:none;padding:4px 5px}
-.total-label{font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.38)}
-.total-badge{display:inline-block;font-family:'Playfair Display',serif;font-size:9.5px;font-weight:900;padding:2px 5px}
-.total-badge.high{background:#d5f0e2;color:#1e8449}.total-badge.mid{background:#fef3d0;color:#b7800a}
-.total-badge.low{background:#fde8e8;color:#c0392b}.total-badge.none{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.28)}
+.total-label{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.75)}
+.total-badge{display:inline-block;font-family:'Playfair Display',serif;font-size:12px;font-weight:900;padding:2px 5px}
+.total-badge.high{background:#d5f0e2;color:#1e8449}.total-badge.mid{background:#fef3d0;color:#7a5200}
+.total-badge.low{background:#fde8e8;color:#c0392b}.total-badge.none{background:rgba(255,255,255,0.12);color:rgba(255,255,255,0.65)}
 .overall-section{background:#fff;border:1px solid #d0c8bb;margin-bottom:14px;overflow:hidden}
-.overall-hdr{background:#1c1c1c;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #c0392b}
-.overall-hdr-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#fff}
-.overall-hdr-sub{font-size:9px;font-weight:300;color:rgba(255,255,255,0.35);letter-spacing:1px;text-transform:uppercase}
+.overall-hdr{background:#1c1c1c;padding:9px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid #1E4D2B}
+.overall-hdr-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff}
+.overall-hdr-sub{font-size:12px;font-weight:500;color:rgba(255,255,255,0.85);letter-spacing:1px;text-transform:uppercase}
 .overall-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:0}
 .oc{border-right:1px solid #e8e2d6;padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:5px}
 .oc:last-child{border-right:none}
-.oc-name{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;color:#1c1c1c;text-align:center;line-height:1.2}
-.oc-role{font-size:7.5px;font-weight:400;color:#999;text-transform:uppercase;letter-spacing:0.5px;text-align:center}
-.oc-grade{font-family:'Playfair Display',serif;font-size:32px;font-weight:900;line-height:1;margin:2px 0}
-.oc-grade.A{color:#1e8449}.oc-grade.B{color:#0a5c8a}.oc-grade.C{color:#b7800a}.oc-grade.D{color:#c0392b}.oc-grade.F{color:#922b21}.oc-grade.X{color:#bbb}
-.oc-pct{font-size:10px;font-weight:700;text-align:center}
-.oc-pct.A{color:#1e8449}.oc-pct.B{color:#0a5c8a}.oc-pct.C{color:#b7800a}.oc-pct.D,.oc-pct.F{color:#c0392b}.oc-pct.X{color:#bbb}
-.oc-bar-bg{width:100%;height:4px;background:#e8e2d6;border-radius:2px;overflow:hidden}
+.oc-name{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#1c1c1c;text-align:center;line-height:1.2}
+.oc-role{font-size:10px;font-weight:600;color:#333;text-transform:uppercase;letter-spacing:0.5px;text-align:center}
+.oc-grade{font-family:'Playfair Display',serif;font-size:35px;font-weight:900;line-height:1;margin:2px 0}
+.oc-grade.A{color:#1E4D2B}.oc-grade.B{color:#0a5c8a}.oc-grade.C{color:#7a5200}.oc-grade.D{color:#c0392b}.oc-grade.F{color:#922b21}.oc-grade.X{color:#555}
+.oc-pct{font-size:13px;font-weight:700;text-align:center}
+.oc-pct.A{color:#1E4D2B}.oc-pct.B{color:#0a5c8a}.oc-pct.C{color:#7a5200}.oc-pct.D,.oc-pct.F{color:#c0392b}.oc-pct.X{color:#555}
+.oc-bar-bg{width:100%;height:5px;background:#e8e2d6;border-radius:2px;overflow:hidden}
 .oc-bar-fill{height:100%;border-radius:2px;transition:width 0.4s}
-.oc-bar-fill.A,.oc-bar-fill.B{background:#1e8449}.oc-bar-fill.C{background:#e8a020}.oc-bar-fill.D,.oc-bar-fill.F{background:#c0392b}.oc-bar-fill.X{background:#ddd}
-.oc-sub{font-size:7.5px;color:#aaa;text-align:center;margin-top:-3px;margin-bottom:1px}
-.oc-dl{font-size:7px;font-weight:700;min-width:18px;text-align:right;flex-shrink:0}
-.oc-dl-good{color:#1e8449}.oc-dl-mid{color:#b7800a}.oc-dl-bad{color:#c0392b}.oc-dl-blank{color:#ccc}
+.oc-bar-fill.A,.oc-bar-fill.B{background:#1E4D2B}.oc-bar-fill.C{background:#C8A951}.oc-bar-fill.D,.oc-bar-fill.F{background:#c0392b}.oc-bar-fill.X{background:#bbb}
+.oc-sub{font-size:10px;color:#444;text-align:center;margin-top:-3px;margin-bottom:1px}
+.oc-dl{font-size:10px;font-weight:700;min-width:18px;text-align:right;flex-shrink:0}
+.oc-dl-good{color:#1E4D2B}.oc-dl-mid{color:#7a5200}.oc-dl-bad{color:#c0392b}.oc-dl-blank{color:#888}
 .oc-demand-row{display:flex;align-items:center;gap:4px;width:100%}
-.oc-demand-label{font-size:7px;font-weight:600;color:#bbb;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0;width:20px}
+.oc-demand-label{font-size:10px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.5px;flex-shrink:0;width:24px}
 .oc-dots{display:flex;gap:2px}
-.mini-dot{width:6px;height:6px;border-radius:1px;flex-shrink:0}
-.mini-dot.committed{background:#1e8449}.mini-dot.met{background:#0a5c8a}.mini-dot.refused{background:#c0392b}
-.mini-dot.failed{background:#6b0000}.mini-dot.noresp{background:#e8a020}.mini-dot.blank{background:#ddd}
+.mini-dot{width:8px;height:8px;border-radius:1px;flex-shrink:0}
+.mini-dot.committed{background:#1E4D2B}.mini-dot.met{background:#0a5c8a}.mini-dot.refused{background:#c0392b}
+.mini-dot.failed{background:#6b0000}.mini-dot.noresp{background:#C8A951}.mini-dot.blank{background:#bbb}
 /* JOIN BOX */
-.join-box{background:#fff;border:2px solid #c0392b;margin-bottom:18px;overflow:hidden}
+.join-box{background:#fff;border:2px solid #1E4D2B;margin-bottom:18px;overflow:hidden}
 .join-inner{display:grid;grid-template-columns:200px 1fr;gap:0}
-.join-hdr-col{background:#c0392b;padding:14px 16px;display:flex;flex-direction:column;justify-content:center}
-.join-eyebrow{font-size:8px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:4px}
+.join-hdr-col{background:#1E4D2B;padding:14px 16px;display:flex;flex-direction:column;justify-content:center}
+.join-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-bottom:4px}
 .join-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#fff;line-height:1}
 .join-title em{font-style:italic}
-.join-tagline{font-family:'Playfair Display',serif;font-size:10px;font-style:italic;color:rgba(255,255,255,0.65);margin-top:8px}
+.join-tagline{font-family:'Playfair Display',serif;font-size:13px;font-style:italic;color:rgba(255,255,255,0.85);margin-top:8px}
 .join-content{padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-.join-pitch{font-size:11px;color:#444;line-height:1.55}.join-pitch strong{color:#1c1c1c;font-weight:700}
+.join-pitch{font-size:14px;color:#1c1c1c;line-height:1.55}.join-pitch strong{color:#1c1c1c;font-weight:700}
 .join-steps{display:flex;flex-direction:column;gap:6px}
 .join-step{display:flex;align-items:flex-start;gap:8px}
-.step-n{background:#1c1c1c;color:#fff;font-family:'Playfair Display',serif;font-size:9px;font-weight:900;width:16px;height:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-.step-t{font-size:10px;color:#333;line-height:1.45}.step-t strong{font-weight:700;color:#1c1c1c}
-.ptag{display:inline-block;padding:0 4px;font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-right:3px}
-.ptag.red{background:#c0392b}.ptag.gold{background:#e8a020;color:#1c1c1c}.ptag.blue{background:#1877F2}
+.step-n{background:#1c1c1c;color:#fff;font-family:'Playfair Display',serif;font-size:12px;font-weight:900;width:20px;height:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.step-t{font-size:13px;color:#1c1c1c;line-height:1.45}.step-t strong{font-weight:700;color:#1c1c1c}
+.ptag{display:inline-block;padding:0 5px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#fff;margin-right:3px}
+.ptag.red{background:#c0392b}.ptag.gold{background:#C8A951;color:#1c1c1c}.ptag.blue{background:#1877F2}
 /* FOOTER */
-.footer{background:#1c1c1c;border-top:3px solid #c0392b;padding:9px 24px}
+.footer{background:#1c1c1c;border-top:3px solid #1E4D2B;padding:9px 24px}
 .footer-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.footer-left{font-size:8.5px;font-weight:300;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.28)}
-.footer-center{font-family:'Playfair Display',serif;font-size:11px;font-style:italic;color:rgba(255,255,255,0.4)}
-.footer-right{font-size:8.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#c0392b}
-.last-upd{font-size:8.5px;color:rgba(255,255,255,0.2);margin-top:2px}
+.footer-left{font-size:12px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.85)}
+.footer-center{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:rgba(255,255,255,0.85)}
+.footer-right{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8A951}
+.last-upd{font-size:11px;color:rgba(255,255,255,0.65);margin-top:2px}
 /* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.55);display:none;align-items:center;justify-content:center;z-index:9999}
 .modal{background:#fff;border:2px solid #1c1c1c;min-width:290px;max-width:370px;overflow:hidden}
 .modal-hdr{background:#1c1c1c;padding:10px 14px}
 .modal-hdr h3{font-family:'Playfair Display',serif;font-size:13px;font-weight:700;color:#fff}
-.modal-hdr p{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px}
+.modal-hdr p{font-size:12px;color:rgba(255,255,255,0.75);margin-top:2px}
 .modal-body{padding:12px 14px}
-.modal-sec{font-size:8px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #e8e2d6}
-.modal-sec.pos{color:#1e8449}.modal-sec.neg{color:#c0392b}.modal-sec.neu{color:#b7800a}
+.modal-sec{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #e8e2d6}
+.modal-sec.pos{color:#1E4D2B}.modal-sec.neg{color:#c0392b}.modal-sec.neu{color:#7a5200}
 .modal-opts{display:flex;flex-direction:column;gap:5px;margin-bottom:8px}
 .modal-opt{display:flex;align-items:center;gap:9px;padding:7px 10px;border:1px solid #e0d8cc;cursor:pointer;transition:background 0.1s}
-.modal-opt:hover{background:#f7f3ee}.modal-opt.selected{border-color:#c0392b;background:#fff8f7}
-.opt-icon{width:19px;height:19px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0}
-.opt-icon.committed{background:#d5f0e2;color:#1e8449;border:1px solid #1e8449}
+.modal-opt:hover{background:#f7f3ee}.modal-opt.selected{border-color:#1E4D2B;background:#f0f8f3}
+.opt-icon{width:22px;height:22px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;flex-shrink:0}
+.opt-icon.committed{background:#d5f0e2;color:#1E4D2B;border:1px solid #1E4D2B}
 .opt-icon.met{background:#d0eaf8;color:#0a5c8a;border:1px solid #0a5c8a}
 .opt-icon.refused{background:#fde8e8;color:#c0392b;border:1px solid #c0392b}
 .opt-icon.failed{background:#f5d0d0;color:#6b0000;border:1px solid #6b0000}
-.opt-icon.noresp{background:#fef3d0;color:#b7800a;border:1px solid #e8a020}
-.opt-icon.blank{background:#f0ebe0;color:#bbb;border:1px dashed #ccc}
-.opt-short{font-size:10px;font-weight:700;color:#1c1c1c}.opt-long{font-size:8.5px;color:#888}
+.opt-icon.noresp{background:#fef3d0;color:#7a5200;border:1px solid #C8A951}
+.opt-icon.blank{background:#f0ebe0;color:#666;border:1px dashed #aaa}
+.opt-short{font-size:13px;font-weight:700;color:#1c1c1c}.opt-long{font-size:11px;color:#444}
 .modal-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:10px;padding-top:9px;border-top:1px solid #e8e2d6}
-.btn-cancel{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:1px solid #ccc;background:transparent;color:#777;cursor:pointer}
+.btn-cancel{font-family:'Libre Franklin',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border:1px solid #aaa;background:transparent;color:#444;cursor:pointer}
 .btn-cancel:hover{background:#f7f3ee}
-.btn-save{font-family:'Libre Franklin',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:6px 12px;border:none;background:#c0392b;color:#fff;cursor:pointer}
-.btn-save:hover{background:#922b21}
+.btn-save{font-family:'Libre Franklin',sans-serif;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;border:none;background:#1E4D2B;color:#fff;cursor:pointer}
+.btn-save:hover{background:#143520}
 /* OVERSIGHT PANEL */
 .oversight-panel{background:#1c1c1c;border-bottom:3px solid #0a5c8a;padding:10px 24px;display:none}
 .oversight-inner{max-width:1140px;margin:0 auto}
@@ -184,38 +184,38 @@ tr:last-child td{border-bottom:none}
 /* EXPLAINER PAGE */
 .explainer{max-width:1140px;margin:0 auto;padding:24px 24px 0}
 .ex-hero{background:#1c1c1c;border-bottom:4px solid #c0392b;padding:32px 36px;margin-bottom:20px}
-.ex-hero-kicker{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#c0392b;margin-bottom:8px}
-.ex-hero-title{font-family:'Playfair Display',serif;font-size:clamp(22px,3.5vw,42px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:10px}
-.ex-hero-title em{color:#c0392b;font-style:normal}
-.ex-hero-body{font-size:13px;color:rgba(255,255,255,0.65);line-height:1.7;max-width:780px}
+.ex-hero-kicker{font-size:12px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#C8A951;margin-bottom:8px}
+.ex-hero-title{font-family:'Playfair Display',serif;font-size:clamp(25px,3.5vw,45px);font-weight:900;color:#fff;line-height:1.05;margin-bottom:10px}
+.ex-hero-title em{color:#C8A951;font-style:normal}
+.ex-hero-body{font-size:16px;color:rgba(255,255,255,0.90);line-height:1.7;max-width:780px}
 .ex-hero-body strong{color:#fff}
 .ex-non-neg{background:#c0392b;padding:20px 36px;margin-bottom:20px;border-left:6px solid #6b0000}
-.ex-non-neg-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:900;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
-.ex-non-neg-body{font-size:12px;color:rgba(255,255,255,0.85);line-height:1.75;max-width:900px}
+.ex-non-neg-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:900;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px}
+.ex-non-neg-body{font-size:15px;color:rgba(255,255,255,0.95);line-height:1.75;max-width:900px}
 .ex-non-neg-body strong{color:#fff;font-weight:800}
 .ex-board{background:#fff;border:1px solid #d0c8bb;margin-bottom:20px;overflow:hidden}
 .ex-board-hdr{background:#0a5c8a;padding:12px 18px;display:flex;align-items:center;gap:12px}
 .ex-board-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:rgba(255,255,255,0.3);flex-shrink:0}
 .ex-board-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff}
-.ex-board-sub{font-size:9px;color:rgba(255,255,255,0.5);margin-top:2px;font-weight:300;letter-spacing:1px;text-transform:uppercase}
+.ex-board-sub{font-size:12px;color:rgba(255,255,255,0.80);margin-top:2px;font-weight:400;letter-spacing:1px;text-transform:uppercase}
 .ex-board-body{padding:16px 18px}
 .ex-board-members{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.ex-member-card{background:#f0f8ff;border:1px solid #0a5c8a;padding:6px 12px;font-size:11px}
-.ex-member-role{font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a5c8a;display:block;margin-bottom:1px}
+.ex-member-card{background:#f0f8ff;border:1px solid #0a5c8a;padding:6px 12px;font-size:13px}
+.ex-member-role{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#0a5c8a;display:block;margin-bottom:1px}
 .ex-member-name{font-weight:700;color:#1c1c1c}
 .ex-section{background:#fff;border:1px solid #d0c8bb;margin-bottom:20px;overflow:hidden}
 .ex-section-hdr{background:#1c1c1c;padding:12px 18px;display:flex;align-items:center;gap:12px}
-.ex-section-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#c0392b;flex-shrink:0;min-width:32px}
-.ex-section-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:#fff}
-.ex-section-sub{font-size:9px;color:rgba(255,255,255,0.4);margin-top:2px;font-weight:300;letter-spacing:1px;text-transform:uppercase}
-.ex-section-body{padding:16px 18px;font-size:12px;color:#444;line-height:1.7}
+.ex-section-num{font-family:'Playfair Display',serif;font-size:25px;font-weight:900;color:#C8A951;flex-shrink:0;min-width:32px}
+.ex-section-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#fff}
+.ex-section-sub{font-size:12px;color:rgba(255,255,255,0.80);margin-top:2px;font-weight:400;letter-spacing:1px;text-transform:uppercase}
+.ex-section-body{padding:16px 18px;font-size:15px;color:#1c1c1c;line-height:1.7}
 .ex-section-body strong{color:#1c1c1c;font-weight:700}
 .ex-demand-list{list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:5px}
-.ex-demand-list li{display:flex;align-items:flex-start;gap:8px;padding:6px 10px;background:#faf8f5;border-left:3px solid #c0392b;font-size:11px}
-.ex-demand-list li::before{content:"▸";color:#c0392b;font-weight:700;flex-shrink:0;margin-top:1px}
-.ex-quote{background:#1c1c1c;padding:16px 20px;margin:14px 0;border-left:4px solid #e8a020}
-.ex-quote-text{font-family:'Playfair Display',serif;font-size:14px;font-style:italic;color:#fff;line-height:1.55}
-.ex-quote-attr{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#e8a020;margin-top:6px}
+.ex-demand-list li{display:flex;align-items:flex-start;gap:8px;padding:6px 10px;background:#faf8f5;border-left:3px solid #1E4D2B;font-size:14px}
+.ex-demand-list li::before{content:"▸";color:#1E4D2B;font-weight:700;flex-shrink:0;margin-top:1px}
+.ex-quote{background:#1c1c1c;padding:16px 20px;margin:14px 0;border-left:4px solid #C8A951}
+.ex-quote-text{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:#fff;line-height:1.55}
+.ex-quote-attr{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C8A951;margin-top:6px}
 @media(max-width:700px){
   .join-inner{grid-template-columns:1fr}.join-content{grid-template-columns:1fr}
   .overall-grid{grid-template-columns:repeat(2,1fr)}
@@ -228,8 +228,8 @@ tr:last-child td{border-bottom:none}
 <div class="masthead">
   <div class="masthead-inner">
     <div>
-      <div class="mast-kicker">Greeley Accountability Coalition · Cascadia Data Center Project · 2026</div>
-      <div class="mast-title">Council <em>Transparency &amp; Accountability</em> Scorecard</div>
+      <div class="mast-kicker">The many hands Greeley Accountability and transparency Coalition</div>
+      <div class="mast-title">The Greeley City Government <em style="color:#fff">Accountability</em> Scorecard</div>
       <div class="mast-sub">Tracking commitments · Issue by Issue · Official by Official</div>
     </div>
     <div class="mast-right">
@@ -268,6 +268,7 @@ tr:last-child td{border-bottom:none}
   <div class="page-nav-inner">
     <button class="nav-tab active" onclick="showPage('scorecard',this)">📊 Scorecard</button>
     <button class="nav-tab" onclick="showPage('explainer',this)">📖 The Issues Explained</button>
+    <button class="nav-tab" onclick="showPage('preamble',this)">📜 Public Servant Code of Conduct</button>
   </div>
 </div>
 
@@ -534,10 +535,76 @@ tr:last-child td{border-bottom:none}
   </div><!-- /explainer -->
 </div><!-- /page-explainer -->
 
+<!-- ══════════════════ PREAMBLE PAGE ══════════════════ -->
+<div class="page-section" id="page-preamble">
+  <div class="explainer">
+    <div class="ex-hero" style="border-bottom:4px solid #C8A951">
+      <div class="ex-hero-kicker">Many Hands · Greeley Accountability &amp; Transparency Coalition · 2026</div>
+      <div class="ex-hero-title">Public Servant<br><em>Code of Conduct</em></div>
+      <div class="ex-hero-body">A formal declaration of the covenant between the people of Greeley and those who seek to serve them in public office.</div>
+    </div>
+    <div style="background:#fff;border:1px solid #d0c8bb;margin-bottom:20px;overflow:hidden">
+      <div style="background:#1E4D2B;padding:16px 22px;border-bottom:4px solid #C8A951">
+        <div style="font-size:13px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#C8A951;margin-bottom:6px">A Decree of Many Hands</div>
+        <div style="font-family:'Playfair Display',serif;font-size:24px;font-weight:900;color:#fff;line-height:1.1">In the tradition of those who came before us</div>
+      </div>
+      <div style="padding:32px 36px;background:#faf8f5">
+        <div style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:#333;line-height:1.7;margin-bottom:24px;padding:18px 22px;border-left:5px solid #C8A951;background:#fff">
+          In the tradition of those who came before us, who understood that democracy is not a gift bestowed by the powerful but a covenant maintained by the vigilant,
+        </div>
+        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#1E4D2B;margin-bottom:22px;letter-spacing:-0.3px">We the members of Many Hands do hereby decree:</div>
+        <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:30px">
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 18px;background:#fff;border:1px solid #d0c8bb;border-left:5px solid #1E4D2B">
+            <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:#C8A951;line-height:1;flex-shrink:0;margin-top:-2px">I.</div>
+            <div style="font-size:17px;color:#1c1c1c;line-height:1.65">That <strong>public office is a public trust.</strong></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 18px;background:#fff;border:1px solid #d0c8bb;border-left:5px solid #1E4D2B">
+            <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:#C8A951;line-height:1;flex-shrink:0;margin-top:-2px">II.</div>
+            <div style="font-size:17px;color:#1c1c1c;line-height:1.65">That those who <strong>seek power from the people of Greeley owe the people of Greeley answers.</strong></div>
+          </div>
+          <div style="display:flex;gap:16px;align-items:flex-start;padding:16px 18px;background:#fff;border:1px solid #d0c8bb;border-left:5px solid #1E4D2B">
+            <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:#C8A951;line-height:1;flex-shrink:0;margin-top:-2px">III.</div>
+            <div style="font-size:17px;color:#1c1c1c;line-height:1.65">That <strong>transparency is not a courtesy</strong> extended by the powerful to the governed — it is the <strong>foundational obligation</strong> of every elected servant.</div>
+          </div>
+        </div>
+        <div style="font-size:17px;color:#1c1c1c;line-height:1.8;margin-bottom:20px">
+          When that covenant is broken, when voices are silenced, when decisions of profound consequence are made in shadows rather than in sunlight, <strong>it falls upon the citizens themselves to restore the light.</strong>
+        </div>
+        <div style="font-size:17px;color:#1c1c1c;line-height:1.8;margin-bottom:28px">
+          We do not come in hostility. We come in the oldest tradition of American democracy — the tradition of <strong>the people holding power accountable.</strong>
+        </div>
+        <div style="background:#1c1c1c;border-left:6px solid #C8A951;padding:24px 28px;margin-bottom:30px">
+          <div style="font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:#fff;line-height:1.75">
+            Therefore, Many Hands hereby establishes this <strong style="color:#C8A951;font-style:normal">Citizens Oversight Scorecard</strong> as a permanent instrument of civic accountability. Let the record show who answered. Let the record show who served. And let the record show who forgot who put them there.
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:30px">
+          <div style="background:#1E4D2B;padding:20px 16px;text-align:center">
+            <div style="font-size:32px;margin-bottom:10px">👁</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff">We Are Watching</div>
+          </div>
+          <div style="background:#1E4D2B;padding:20px 16px;text-align:center">
+            <div style="font-size:32px;margin-bottom:10px">📋</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff">We Are Recording</div>
+          </div>
+          <div style="background:#1E4D2B;padding:20px 16px;text-align:center">
+            <div style="font-size:32px;margin-bottom:10px">🗳</div>
+            <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff">We Will Remember</div>
+          </div>
+        </div>
+        <div style="background:#1c1c1c;padding:28px 32px;text-align:center;border-top:5px solid #C8A951">
+          <div style="font-family:'Playfair Display',serif;font-size:30px;font-weight:900;color:#C8A951;letter-spacing:3px;margin-bottom:8px">WE ARE MANY HANDS.</div>
+          <div style="font-family:'Playfair Display',serif;font-size:18px;font-style:italic;color:rgba(255,255,255,0.90)">We are watching. We will remember.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="footer">
   <div class="footer-inner">
     <div>
-      <div class="footer-left">Greeley Accountability Coalition · Council Transparency &amp; Accountability Scorecard · Cascadia Data Center · 2026</div>
+      <div class="footer-left">Many Hands Greeley Accountability &amp; Transparency Coalition · The Greeley City Government Accountability Scorecard · 2026</div>
       <div class="last-upd" id="lastUpdFooter"></div>
     </div>
     <div class="footer-center">★ Updated in real time ★</div>
@@ -599,6 +666,30 @@ const OFFICIALS = [
 
 /* ── CONSOLIDATED DEMANDS (5 — oversight merged into one) ── */
 const DEMANDS = [
+  {id:"pledge", num:"P1", title:"Accountability Pledge", short:"Pledge",
+   desc:"I pledge that by seeking your vote, I recognize that I am an employee of the citizens who elect me and those I aspire to represent. My duty is to serve their interests with integrity and respect.",
+   std:"Standard: Public, on-record acknowledgment that elected office is employment by the citizenry — with all duties and accountabilities that implies.",
+   criteria:[
+     {id:"p1a", label:"Publicly stated on record that elected office constitutes employment by and accountability to citizens"},
+     {id:"p1b", label:"Has affirmed commitment to serve citizen interests with integrity — not party, donor, or personal interests"},
+     {id:"p1c", label:"Has demonstrated consistent alignment between stated pledge and actual voting record"},
+   ]},
+  {id:"fiscal", num:"P2", title:"Financial Responsibility Commitment", short:"Fiscal",
+   desc:"As an employee of the citizens of Greeley, I commit that I will not impose any financial obligation that impacts taxes — whether increasing or decreasing — without first submitting the matter to a public referendum when the amount exceeds $1,000,000.",
+   std:"Standard: No tax-impacting financial commitment over $1M without a public referendum. Period.",
+   criteria:[
+     {id:"f1a", label:"Has committed on record to require public referendum for any tax-impacting obligation exceeding $1,000,000"},
+     {id:"f1b", label:"Has not imposed or voted to impose financial obligations over $1M without public vote"},
+     {id:"f1c", label:"Has publicly disclosed all pending financial obligations that may trigger referendum requirement"},
+   ]},
+  {id:"transparency", num:"P3", title:"Transparency & Accountability Standard", short:"Transparency",
+   desc:"I acknowledge that public trust has, at times, been weakened by a lack of transparency and accountability. I commit to conducting myself openly, honestly, and responsibly at all times. I understand that my performance will be judged by the citizens I serve.",
+   std:"Standard: Public acknowledgment of past transparency failures + binding commitment to open conduct. Performance judged by constituents, not self-assessment.",
+   criteria:[
+     {id:"t1a", label:"Has publicly acknowledged prior failures of transparency in local government"},
+     {id:"t1b", label:"Has committed on record to conduct all official business openly and honestly"},
+     {id:"t1c", label:"Has accepted that citizen oversight bodies — not self-assessment — are the proper judges of performance"},
+   ]},
   {id:"oversight", num:1, title:"Citizens Oversight Council — Acceptance & Recognition", short:"Oversight",
    desc:"Council commits to formally recognize the Many Hands Action Citizens Oversight Council, accept named members without veto, guarantee regular public meetings, and grant the COC standing authority to review all development agreements",
    std:"We need: Named members accepted in writing · No council veto · Formal recognition · Regular public meetings guaranteed · COC granted standing review authority",
@@ -645,12 +736,12 @@ const DEMANDS = [
 ];
 
 const STATUS = {
-  committed:{icon:"✓",short:"Committed",long:"Committed on record",positive:true},
-  met:      {icon:"★",short:"Met Commitment",long:"Commitment fully met",positive:true},
-  refused:  {icon:"✗",short:"Refused",long:"Refused / opposed",positive:false},
-  failed:   {icon:"✗",short:"Failed Constituency",long:"Failed their constituency",positive:false},
-  noresp:   {icon:"?",short:"No Response",long:"No response / stalling",positive:false},
-  blank:    {icon:"—",short:"Not Tracked",long:"Not tracked yet",positive:null},
+  committed:{icon:"+2",short:"Committed",long:"Committed on record — public pledge made",positive:true,score:+2},
+  met:      {icon:"+1",short:"Met Commitment",long:"Commitment fully met — delivered",positive:true,score:+1},
+  refused:  {icon:"−1",short:"Refused",long:"Refused / actively opposed",positive:false,score:-1},
+  failed:   {icon:"−2",short:"Failed Constituency",long:"Failed their constituency — broken promise",positive:false,score:-2},
+  noresp:   {icon:"0",short:"No Response",long:"No response / stalling",positive:false,score:0},
+  blank:    {icon:"—",short:"Not Tracked",long:"Not tracked yet",positive:null,score:null},
 };
 
 const MAX_OVERSIGHT = 9;
@@ -667,7 +758,7 @@ function seedBlankScores(){
 async function initFirebase(){
   const fbStat = document.getElementById("fbStatus");
   if(!FIREBASE_CONFIGURED){
-    fbStat.textContent="⚠ Config needed"; fbStat.className="fb-status error";
+    fbStat.style.display="none"; // hide — unconfigured state is not an error users need to see
     return; // already rendered blank scorecard at boot
   }
   try {
@@ -906,10 +997,16 @@ function render(){
 function openModal(did,cid,oid,k,current){
   modalCtx={k}; modalSel=current;
   const d=DEMANDS.find(x=>x.id===did),cr=d.criteria.find(x=>x.id===cid),o=OFFICIALS.find(x=>x.id===oid);
-  const opt=(s)=>`<div class="modal-opt ${s===current?"selected":""}" onclick="selOpt(this,'${s}')">
-  <div class="opt-icon ${s}">${STATUS[s].icon}</div>
-  <div><div class="opt-short">${STATUS[s].short}</div><div class="opt-long">${STATUS[s].long}</div></div>
+  const opt=(s)=>{
+    const sc=STATUS[s].score;
+    const scoreDisp=sc===null?"—":sc>0?`+${sc}`:String(sc);
+    const scoreColor=sc===null?"#aaa":sc>0?"#1E4D2B":sc<0?"#c0392b":"#7a5200";
+    return `<div class="modal-opt ${s===current?"selected":""}" onclick="selOpt(this,'${s}')">
+  <div class="opt-icon ${s}" style="font-size:13px;font-weight:900;min-width:32px;color:${scoreColor};background:${sc===null?'#f0ebe0':sc>0?'#d0ead8':sc<0?'#fde8e8':'#fef3d0'};border-color:${scoreColor}">${scoreDisp}</div>
+  <div style="flex:1"><div class="opt-short">${STATUS[s].short}</div><div class="opt-long">${STATUS[s].long}</div></div>
+  <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:${scoreColor};min-width:30px;text-align:right">${scoreDisp}</div>
 </div>`;
+  };
   document.getElementById("modalBox").innerHTML=`
 <div class="modal-hdr"><h3>${o.name}</h3><p>${d.title} · ${cr.label}</p></div>
 <div class="modal-body">
@@ -990,3 +1087,4 @@ initFirebase();      // then connect Firebase and replace with real data
 </script>
 </body>
 </html>
+
